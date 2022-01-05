@@ -1,0 +1,35 @@
+.support-company {
+  width: 100%;
+  // background-color: #0ff;
+  font-size: 1.6rem;
+
+  &__titel {
+    margin: 3rem 0;
+    padding: 0;
+
+    &__support-company-image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 5rem;
+      overflow: hidden;
+      &__support-company-image {
+        position: absolute;
+        width: 10px;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        transform: translateX(100%);
+        animation: scrolling 15s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

@@ -1,0 +1,54 @@
+@import '../../sass/variables';
+.custom-dropdown {
+  width: 100%;
+  user-select: none;
+  text-align: start;
+  position: relative;
+  font-size: 1.8rem;
+
+  .custom-ropdown-btn {
+    padding: 1rem;
+    outline: none;
+    border-radius: 0.5rem;
+    border: 0.1rem solid $color-grey-dark-3;
+    box-shadow: 0 0 1.3rem rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+
+    .down-arrow {
+      width: 0.8rem;
+      height: 0.8rem;
+      margin-left: 0.4rem;
+      stroke: $color-grey-dark-1;
+      transition: all 0.2s;
+    }
+  }
+  .custom-ropdown-content {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    padding: 0.5rem;
+    background-color: $color-grey-light-1;
+    box-shadow: 0 0 1.3rem rgba(0, 0, 0, 0.1);
+    width: 100%;
+    z-index: 2;
+    border-radius: 0.5rem;
+    border: 0.1rem solid $color-grey-dark-3;
+
+    .custom-ropdown-item {
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      // border-bottom: 0.05rem solid $color-grey-dark-3;
+
+      &:hover {
+        background-color: rgb(235, 235, 235);
+        // color: $color-primary;
+      }
+    }
+  }
+}

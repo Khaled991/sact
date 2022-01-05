@@ -1,0 +1,50 @@
+@import '../../sass/variables';
+
+.mySwiper {
+  width: 50%;
+  height: 100%;
+  border-radius: 0.5rem;
+  box-shadow: $custom-box-shadow-1;
+  background-color: $color-light-opacity;
+  margin: 3rem;
+  font-size: 1.8rem;
+  cursor: grab;
+  &:active {
+    cursor: grabbing;
+  }
+  @media (max-width: 992px) {
+    & {
+      width: 100%;
+      margin: 1rem;
+    }
+  }
+
+  @media (max-width: 575px) {
+    & {
+      display: none;
+    }
+  }
+}
+
+.swiper-button-prev {
+  display: none;
+}
+.swiper-button-next {
+  display: none;
+}
+.swiper-pagination-bullet {
+  background-color: $color-primary;
+}
+
+.swiper-slide-content {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 4rem;
+
+  &__title {
+    font-size: 3.3rem;
+    line-height: 4.3rem;
+    font-weight: bold;
+    color: $color-primary;
+  }
+}

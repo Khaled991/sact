@@ -1,0 +1,54 @@
+@import '../../sass/variables';
+
+.accordion {
+  max-width: 60rem;
+  font-size: 2rem;
+
+  &__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke: $color-primary;
+    transform: rotate(-90deg);
+    transition: all 0.5s;
+    margin-right: 1rem;
+  }
+
+  &__contentBx {
+    position: relative;
+    margin: 1rem 2rem;
+
+    &.active {
+      .accordion__content {
+        height: 15rem;
+        padding: 1rem;
+      }
+      .accordion__icon {
+        transform: rotate(0deg);
+      }
+    }
+    @media (max-width: 767px) {
+      & {
+        margin: 1rem 0rem;
+      }
+    }
+  }
+  &__label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // position: relative;
+    padding: 1.3rem;
+    background-color: $color-light-opacity;
+    box-shadow: $custom-box-shadow-1;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    flex-direction: row-reverse;
+  }
+  &__content {
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    overflow-y: auto;
+    font-size: 1.9rem;
+  }
+}

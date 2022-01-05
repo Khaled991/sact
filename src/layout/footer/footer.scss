@@ -1,0 +1,123 @@
+@import '../../sass/variables';
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 1rem;
+  min-height: 25vh;
+  background-color: $color-primary;
+  color: $color-grey-light-1;
+  font-size: 1.8rem;
+
+  &__top {
+    display: flex;
+    justify-content: center;
+    font-size: 2.2rem;
+  }
+
+  &__content {
+    padding: 2rem;
+  }
+  &__cols {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 2.2rem;
+  }
+
+  &__description {
+    display: flex;
+    align-items: center;
+    color: $color-grey-light-1;
+    cursor: pointer;
+    transition: all 0.2s;
+    &:hover {
+      color: rgba($color-grey-light-1, 0.75);
+    }
+  }
+
+  &__icon {
+    margin-right: 1rem;
+    &--call {
+      width: 2.5rem;
+    }
+    &--location {
+      width: 2.5rem;
+    }
+  }
+  &__bottom {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 0.1rem solid $color-grey-light-2;
+  }
+  &__bottom-cols {
+    display: flex;
+    justify-content: center;
+    &:first-child {
+      justify-content: flex-start;
+      padding-left: 2rem;
+    }
+  }
+  &__socil-media-container {
+    display: flex;
+    align-items: center;
+
+    a {
+      width: 3rem;
+      height: 3rem;
+      margin: 0 0.5rem;
+      &:last-child {
+        width: 4rem;
+        height: 4rem;
+      }
+      & > * {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.7s;
+        &:hover {
+          transform: scale(1.2) rotate(360deg);
+        }
+      }
+    }
+  }
+
+  &__support-companys {
+    width: 15rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    font-size: 1.5rem;
+
+    &__top {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    &__content {
+      padding: 1rem;
+    }
+
+    &__title {
+      font-weight: bold;
+      font-size: 2rem;
+    }
+    &__cols {
+      align-items: flex-start;
+    }
+    &__bottom {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+
+    &__support-companys {
+      padding: 1rem 0;
+    }
+  }
+}
