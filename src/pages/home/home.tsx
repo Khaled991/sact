@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import LeftArrwo from '../../assets/icon/left-arrow.svg';
+// import LeftArrwo from '../../assets/icon/left-arrow.svg';
 import CustomButton, { ButtonType } from '../../components/Button/button';
 import { Row, Container } from 'react-bootstrap';
 import { t } from 'i18next';
