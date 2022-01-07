@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import './invoiceLayout.scss';
 import { IUserData } from './../../pages/getFreeQoute/getFreeQoute';
 import Typography, {
@@ -13,9 +13,35 @@ interface IInvoiceLayoutProps {
 }
 
 const InvoiceLayout = ({ userData }: IInvoiceLayoutProps): ReactElement => {
-  // useEffect(() => {
-  //   console.log(userData);
-  // }, [userData]);
+  const [unitPrice, setUnitPrice] = useState<number>(0);
+
+  const totalPrice = () => {
+    return Number(userData?.numberOfPage ?? 0) * unitPrice;
+  };
+  const totalAndVatPrice = () => {
+    return totalPrice() * 1.15;
+  };
+
+  const vat = () => {
+    return totalPrice() * 0.15;
+  };
+
+  const languagePrice = () => {
+    if (
+      (userData?.selectedFirstLng === 'English' &&
+        userData?.selectedSecondLng === 'Arabic') ||
+      (userData?.selectedFirstLng === 'Arabic' &&
+        userData?.selectedSecondLng === 'English')
+    ) {
+      setUnitPrice(80);
+    } else setUnitPrice(140);
+  };
+
+  useEffect(() => {
+    languagePrice();
+    console.log(userData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userData]);
 
   return (
     <div className="invoice-layout-and-pay-button">
@@ -36,7 +62,9 @@ const InvoiceLayout = ({ userData }: IInvoiceLayoutProps): ReactElement => {
               </span>
               <span>
                 {t('date')} :
-                <span className="header-text__description">1/6/2022</span>
+                <span className="header-text__description">
+                  {new Date().toLocaleDateString()}
+                </span>
               </span>
               <span>
                 {t('invoiceNumber')} :
@@ -51,14 +79,16 @@ const InvoiceLayout = ({ userData }: IInvoiceLayoutProps): ReactElement => {
               <tr className="table__title">
                 <th>{t('requiredTranslation')}</th>
                 <th>{t('page')}</th>
-                <th>{t('pagePrice')}</th>
-                <th>{t('totalPrice')}</th>
+                <th>{t('pagePrice')} SAR</th>
+                <th>{t('vat')} SAR</th>
+                <th>{t('totalPrice')} SAR</th>
               </tr>
               <tr>
-                <td>Russian to English</td>
-                <td>2</td>
-                <td>140</td>
-                <td>280</td>
+                <td>{`${userData?.selectedFirstLng} to ${userData?.selectedSecondLng}`}</td>
+                <td>{userData?.numberOfPage}</td>
+                <td>{unitPrice}</td>
+                <td>{vat()}</td>
+                <td>{totalAndVatPrice()}</td>
               </tr>
             </tbody>
           </table>
@@ -68,29 +98,9 @@ const InvoiceLayout = ({ userData }: IInvoiceLayoutProps): ReactElement => {
                 {t('notes')} :
               </span>
               <span className="invoice-layout__notes-description">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                nostrud exerci tation ullamcorper suscipit lobortis nisl ut
-                aliquip ex ea commodo
+                {userData?.message}
               </span>
             </div>
-            <table className="table-and-notes__cost-table">
-              <tbody>
-                <tr>
-                  <th>{t('totalPrice')}</th>
-                  <td>440 SAR</td>
-                </tr>
-                <tr>
-                  <th>{t('vat')}</th>
-                  <td>66 SAR</td>
-                </tr>
-                <tr>
-                  <th>{t('deservedAmount')}</th>
-                  <td>506 SAR</td>
-                </tr>
-              </tbody>
-            </table>
           </div>
           {/* footer */}
           <div className="invoice-layout__footer">

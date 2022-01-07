@@ -5,6 +5,7 @@ export interface IUserData {
   name?: string;
   phone?: string;
   email?: string;
+  message?: string;
   numberOfPage?: string;
   projectFile?: string;
   selectedFirstLng?: string;
@@ -22,7 +23,7 @@ const GetFreeQoute = (): ReactElement => {
           setUserData={setUserData}
           userData={userData}
           setNavToInvoice={setNavToInvoice}
-        ></GetQuoteLayout>
+        />
       ) : (
         <InvoiceLayout userData={userData} />
       )}
