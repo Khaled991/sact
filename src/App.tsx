@@ -8,6 +8,7 @@ import GetFreeQoute from './pages/getFreeQoute/getFreeQoute';
 import { ISecondaryLayout } from './models/ISecondaryLayout';
 import { rootData } from './data/root';
 import CvSearch from './pages/cvSearch/cvSearch';
+import JoinUsLayout from './pages/joinUs/joinUs';
 
 const Home = lazy(() => import('./pages/home/home'));
 const AboutUS = lazy(() => import('./pages/aboutUS/aboutUs'));
@@ -46,6 +47,7 @@ function App() {
               <Route path="/aboutus" element={<AboutUS />} />
               <Route path="/getAFreeQoute" element={<GetFreeQoute />} />
               <Route path="/cvsearch" element={<CvSearch />} />
+              <Route path="/joinus" element={<JoinUsLayout />} />
               {rootData.map(
                 ({ description, path, primaryTitle }: ISecondaryLayout) => (
                   <Route

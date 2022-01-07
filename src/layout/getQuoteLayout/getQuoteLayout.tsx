@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import './getQuoteLayout.scss';
 import CustomInput, {
   Textarea,
-} from '../../components/customeInput/customInput';
+} from '../../components/customInput/customInput';
 import { Row, Col } from 'react-bootstrap';
 import CustomButton, { ButtonType } from '../../components/Button/button';
 import { ReactComponent as Visa } from '../../assets/icon/visa.svg';

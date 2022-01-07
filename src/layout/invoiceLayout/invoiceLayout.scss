@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   .invoice-layout {
     display: flex;
     align-items: center;
@@ -12,6 +13,7 @@
     flex-direction: column;
     font-size: 1.8rem;
     padding: 2.4rem;
+    width: 95%;
 
     &__title {
       .invoice-layout__border-bottom {
@@ -54,38 +56,16 @@
           padding: 12px 15px;
         }
       }
-      .table-and-notes {
+
+      .invoice-layout__notes {
         display: flex;
+        flex-direction: column;
         margin: 2rem 0;
-
-        .invoice-layout__notes {
-          width: 60%;
-          display: flex;
-          flex-direction: column;
-          .invoice-layout__notes-titel {
-            font-weight: bold;
-          }
-        }
-        &__cost-table {
-          font-size: 0.9em;
-          min-width: 40%;
-
-          & th,
-          & td {
-            border: 0.1rem solid $color-primary;
-            padding: 12px 15px;
-          }
-          & tbody tr {
-            border-bottom: 1px solid #dddddd;
-          }
-        }
-        @media (max-width: 991px) {
-          flex-direction: column;
-          .invoice-layout__notes {
-            width: 100%;
-          }
+        .invoice-layout__notes-titel {
+          font-weight: bold;
         }
       }
+
       .invoice-layout__footer {
         text-align: center;
         border-top: 0.1rem solid $color-primary;

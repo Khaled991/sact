@@ -19,7 +19,7 @@ const InvoiceLayout = ({ userData }: IInvoiceLayoutProps): ReactElement => {
     return Number(userData?.numberOfPage ?? 0) * unitPrice;
   };
   const totalAndVatPrice = () => {
-    return totalPrice() * 1.15;
+    return Number((totalPrice() * 1.15).toString().split('.')[0]) + 1;
   };
 
   const vat = () => {
@@ -79,12 +79,20 @@ const InvoiceLayout = ({ userData }: IInvoiceLayoutProps): ReactElement => {
               <tr className="table__title">
                 <th>{t('requiredTranslation')}</th>
                 <th>{t('page')}</th>
-                <th>{t('pagePrice')} SAR</th>
-                <th>{t('vat')} SAR</th>
-                <th>{t('totalPrice')} SAR</th>
+                <th>
+                  {t('pagePrice')} {t('sar')}
+                </th>
+                <th>
+                  {t('vat')} {t('sar')}
+                </th>
+                <th>
+                  {t('totalPrice')} {t('sar')}
+                </th>
               </tr>
               <tr>
-                <td>{`${userData?.selectedFirstLng} to ${userData?.selectedSecondLng}`}</td>
+                <td>{`${userData?.selectedFirstLng} ${t('to')} ${
+                  userData?.selectedSecondLng
+                }`}</td>
                 <td>{userData?.numberOfPage}</td>
                 <td>{unitPrice}</td>
                 <td>{vat()}</td>
@@ -92,15 +100,11 @@ const InvoiceLayout = ({ userData }: IInvoiceLayoutProps): ReactElement => {
               </tr>
             </tbody>
           </table>
-          <div className="table-and-notes">
-            <div className="invoice-layout__notes">
-              <span className="invoice-layout__notes-titel">
-                {t('notes')} :
-              </span>
-              <span className="invoice-layout__notes-description">
-                {userData?.message}
-              </span>
-            </div>
+          <div className="invoice-layout__notes">
+            <span className="invoice-layout__notes-titel">{t('notes')} :</span>
+            <span className="invoice-layout__notes-description">
+              {userData?.message}
+            </span>
           </div>
           {/* footer */}
           <div className="invoice-layout__footer">

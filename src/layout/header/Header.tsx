@@ -480,10 +480,10 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                 {t('cvsearch')}
               </NavLink>
 
-              <NavDropdown
+              {/* <NavDropdown
                 title={
                   <>
-                    {t('joinus')}
+                    
                     <DownArrow className="down-arrow" />
                   </>
                 }
@@ -526,8 +526,15 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                     Join Our Pool of Freelancers
                   </NavLink>
                 </NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown> */}
 
+              <NavLink
+                to="/joinus"
+                className={activeLink === '/joinus' ? ' selected' : ''}
+                onClick={() => setActiveLink('/joinus')}
+              >
+                {t('joinus')}
+              </NavLink>
               <NavLink
                 to="/aboutus"
                 className={activeLink === '/aboutus' ? ' selected' : ''}
