@@ -3,6 +3,7 @@ import './cvSearch.scss';
 import { ReactElement } from 'react';
 import CustomButton, { ButtonType } from '../../components/Button/button';
 import { ReactComponent as Search } from '../../assets/icon/search.svg';
+import CvCard from '../../layout/cvCard/cvCard';
 
 const CvSearch = (): ReactElement => {
   return (
@@ -11,7 +12,7 @@ const CvSearch = (): ReactElement => {
         <div className="cv-search__search-input-container">
           <input
             placeholder={t('searchUsingCvCode')}
-            name=""
+            name="search"
             type="text"
             className="cv-search__search-input"
           />
@@ -21,6 +22,9 @@ const CvSearch = (): ReactElement => {
         </div>
         <CustomButton type={ButtonType.solid}>{t('buildYourCv')}</CustomButton>
       </div>
+      <CvCard />
+      <CvCard />
+      <CvCard />
     </div>
   );
 };

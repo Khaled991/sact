@@ -8,6 +8,7 @@
   background-color: $color-light-opacity;
   margin: 3rem;
   font-size: 1.8rem;
+  direction: rtl;
   cursor: grab;
   &:active {
     cursor: grabbing;

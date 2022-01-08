@@ -4,20 +4,12 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './swiperSlide.scss';
 import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper';
+import { t } from 'i18next';
+import { reviewsData } from '../../data/reviewsData';
 
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const CustomeSwiper = () => {
-  const commentsData = [
-    {
-      title: 'Ahmed Waleed',
-      description: ` They deliver on time, great service. If there is evaluation morethan 10 stars, it will for them. I sent the files via whats appand receive it next day. I advise everyone need translation, go toSaleh alomar translation. Thanks for your services`,
-    },
-    {
-      title: 'Ahmed Waleed',
-      description: ` They deliver on time, great service. If there is evaluation morethan 10 stars, it will for them. I sent the files via whats appand receive it next day. I advise everyone need translation, go toSaleh alomar translation. Thanks for your services`,
-    },
-  ];
   return (
     <>
       <Swiper
@@ -33,11 +25,16 @@ const CustomeSwiper = () => {
         navigation={true}
         className="mySwiper"
       >
-        {commentsData.map(({ title, description }, i) => (
+        {reviewsData.map(({ title, adjective, description }, i) => (
           <SwiperSlide key={i}>
             <div className="swiper-slide-content">
-              <span className="swiper-slide-content__title">{title}</span>
-              <p className="swiper-slide-content__description">{description}</p>
+              <span className="swiper-slide-content__title">{t(title)}</span>
+              <p className="swiper-slide-content__description">
+                {t(adjective)}
+              </p>
+              <p className="swiper-slide-content__description">
+                {t(description)}
+              </p>
             </div>
           </SwiperSlide>
         ))}

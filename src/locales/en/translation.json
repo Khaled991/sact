@@ -153,9 +153,48 @@
   "JoinUsDescription": "Saleh Al-Omar is proud to be a professional translation company specializing in translation and interpretation from all over the globe. We have a large network of translators in the Middle East, Africa and Europe where our customers are located. If you have a recognized degree in translation and have more than five years of practical experience in translation, whether specialized or not, we would like to know you and we are honored to be part of our team at Saleh Al-Omar for certified translation. By attracting professional translators and interpreters from all over the globe. We have a large network of translators in the Middle East, Africa and Europe where our customers are located. If you have a recognized degree in translation and have more than five years of practical experience in translation, whether specialized or not, we would like to know you and we are honored to be part of our team at Saleh Al-Omar for certified translation.",
   "job": "Job",
   "JoinUsAs": "Join us as",
-  "address": "Address.",
-
+  "address": "Address",
   "translator": "Translator",
   "interpreter": "Interpreter",
-  "JoinOurPoolofFreelancers": "Join Our Pool of Freelancers"
+  "JoinOurPoolofFreelancers": "Join Our Pool of Freelancers",
+
+  "age": "Age",
+  "gender": "Gender",
+  "nationality": "Nationality",
+  "placeOfResidence": "Place of Residence",
+  "socialStatu": "Social statu",
+  "major": "Major",
+  "yearsOfWorkExperience": "Years of Work Experience",
+  "experienceLevel": "Experience level",
+  "expectedSalary": "Expected Salary",
+  "skills": "Skills",
+  "codeReference": "Code References",
+  "dateOfLastEducationalCertificate": "Date of Last Educational Certificate",
+  "lastEducationalCertificate": "Last Educational Certificate",
+  "Courses": "Courses",
+  "dateOfPublication": "Date of Publication",
+
+  "customerReviewsName": "Mazen sinjab",
+  "customerReviewsAdjective": "Doctor",
+  "customerReviewsDescription": "Perfect service. All what you need is to send your material on WhatsApp and you will have it ready within 1 to 2 hours.  Kind welcome reception with Arabic hospitality. The prices are reasonable.",
+
+  "customerReviewsName2": "Sari Barazi",
+  "customerReviewsAdjective2": "Trainer",
+  "customerReviewsDescription2": "I have dealt with SACT as a trainer for many medical translation courses. I was pleased to deal with them either the organizing the course, announcing about it or classrooms or follow up with trainees a. I see that this office is a shiny star in the kingdom sky and a milestone in the translation industry.",
+
+  "customerReviewsName3": "Ottoman Alaqil",
+  "customerReviewsAdjective3": "professor",
+  "customerReviewsDescription3": "Sact is organized and has prompt translation service. I have send a file for translation via mobile and they communicate with me and when I have arrived to the office, I found the file ready to pick up.. I recommend this office for any translation needed.",
+
+  "customerReviewsName4": "Samah Al-Safadi",
+  "customerReviewsAdjective4": "manager",
+  "customerReviewsDescription4": "Their services and speed of getting things done will always bring me there should I need any. They are simply amazing.",
+
+  "customerReviewsName5": "Ahmad Ghazal",
+  "customerReviewsAdjective5": "Accountant",
+  "customerReviewsDescription5": "They deliver on time, great service. If there is evaluation more than 10 stars, it will for them. I sent the files via whats app and receive it next day. I advise everyone need translation, go to Saleh alomar translation. Thanks for your services",
+
+  "customerReviewsName6": "Makady almizar",
+  "customerReviewsAdjective6": "local guide",
+  "customerReviewsDescription6": "It was a great experience for the first time and will not the last of course.. many thanks"
 }
