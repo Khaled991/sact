@@ -467,7 +467,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                     }
                     onClick={() => setActiveLink('/transcription')}
                   >
-                    Transcription
+                    {t('transcriptionTitleData')}
                   </NavLink>
                 </NavDropdown.Item>
               </NavDropdown>
@@ -479,54 +479,6 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
               >
                 {t('cvsearch')}
               </NavLink>
-
-              {/* <NavDropdown
-                title={
-                  <>
-                    
-                    <DownArrow className="down-arrow" />
-                  </>
-                }
-                id="basic-nav-dropdown"
-              >
-                <NavDropdown.Item>
-                  <NavLink
-                    to="/as-a-translator"
-                    className={
-                      activeLink === '/as-a-translator' ? ' selected' : ''
-                    }
-                    onClick={() => setActiveLink('/as-a-translator')}
-                  >
-                    As a Translator
-                  </NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <NavLink
-                    to="/as-an-interpreter"
-                    className={
-                      activeLink === '/as-an-interpreter' ? ' selected' : ''
-                    }
-                    onClick={() => setActiveLink('/as-an-interpreter')}
-                  >
-                    As an Interpreter
-                  </NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <NavLink
-                    to="/join-our-pool-of-freelancers"
-                    className={
-                      activeLink === '/join-our-pool-of-freelancers'
-                        ? ' selected'
-                        : ''
-                    }
-                    onClick={() =>
-                      setActiveLink('/join-our-pool-of-freelancers')
-                    }
-                  >
-                    Join Our Pool of Freelancers
-                  </NavLink>
-                </NavDropdown.Item>
-              </NavDropdown> */}
 
               <NavLink
                 to="/joinus"
