@@ -80,14 +80,14 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                       }
                       onClick={() => setActiveLink('/english-language')}
                     >
-                      English Language
+                      {t('English')}
                     </NavLink>
                   </NavDropdown.Item>
                   <NavDropdown
                     drop="end"
                     title={
                       <>
-                        {'Major languages'}
+                        {t('ajorlanguages')}
                         <DownArrow className="right-arrow" />
                       </>
                     }
@@ -99,7 +99,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                         className={activeLink === '/French' ? ' selected' : ''}
                         onClick={() => setActiveLink('/French')}
                       >
-                        French
+                        {t('French')}
                       </NavLink>
                     </NavDropdown.Item>
                     <NavDropdown.Item>
@@ -108,7 +108,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                         className={activeLink === '/German' ? ' selected' : ''}
                         onClick={() => setActiveLink('/German')}
                       >
-                        German
+                        {t('German')}
                       </NavLink>
                     </NavDropdown.Item>
                     <NavDropdown.Item>
@@ -117,7 +117,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                         className={activeLink === '/Russian' ? ' selected' : ''}
                         onClick={() => setActiveLink('/Russian')}
                       >
-                        Russian
+                        {t('Russian')}
                       </NavLink>
                     </NavDropdown.Item>
                     <NavDropdown.Item>
@@ -126,7 +126,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                         className={activeLink === '/Turkish' ? ' selected' : ''}
                         onClick={() => setActiveLink('/Turkish')}
                       >
-                        Turkish
+                        {t('Turkish')}
                       </NavLink>
                     </NavDropdown.Item>
                   </NavDropdown>
@@ -134,7 +134,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                     drop="end"
                     title={
                       <>
-                        {'Other languages'}
+                        {t('otherLanguages')}
                         <DownArrow className="right-arrow" />
                       </>
                     }
@@ -146,7 +146,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                         className={activeLink === '/Chinese' ? ' selected' : ''}
                         onClick={() => setActiveLink('/Chinese')}
                       >
-                        Chinese
+                        {t('Chinese')}
                       </NavLink>
                     </NavDropdown.Item>
                     <NavDropdown.Item>
@@ -155,7 +155,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                         className={activeLink === '/Italian' ? ' selected' : ''}
                         onClick={() => setActiveLink('/Italian')}
                       >
-                        Italian
+                        {t('Italian')}
                       </NavLink>
                     </NavDropdown.Item>
                     <NavDropdown.Item>
@@ -164,7 +164,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                         className={activeLink === '/Spanish' ? ' selected' : ''}
                         onClick={() => setActiveLink('/Spanish')}
                       >
-                        Spanish
+                        {t('Spanish')}
                       </NavLink>
                     </NavDropdown.Item>
                     <NavDropdown.Item>
@@ -173,7 +173,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                         className={activeLink === '/Swedish' ? ' selected' : ''}
                         onClick={() => setActiveLink('/Swedish')}
                       >
-                        Swedish
+                        {t('swedishLanguageTitleData')}
                       </NavLink>
                     </NavDropdown.Item>
                     <NavDropdown.Item>
@@ -184,7 +184,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                         }
                         onClick={() => setActiveLink('/Ukrainian')}
                       >
-                        Ukrainian
+                        {t('ukrainianLanguageTitleData')}
                       </NavLink>
                     </NavDropdown.Item>
                     <NavDropdown.Item>
@@ -195,7 +195,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                         }
                         onClick={() => setActiveLink('/Bulgarian')}
                       >
-                        Bulgarian
+                        {t('bulgarianLanguageTitleData')}
                       </NavLink>
                     </NavDropdown.Item>
                     <NavDropdown.Item>
@@ -206,7 +206,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                         }
                         onClick={() => setActiveLink('/Portuguese')}
                       >
-                        Portuguese
+                        {t('portugueseLanguageTitleData')}
                       </NavLink>
                     </NavDropdown.Item>
                   </NavDropdown>
@@ -230,7 +230,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                       }
                       onClick={() => setActiveLink('/legal-translation')}
                     >
-                      Legal translation
+                      {t('legalTranslationTitleData')}
                     </NavLink>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
@@ -245,7 +245,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                         setActiveLink('/literary-translation-and-humanities')
                       }
                     >
-                      Literary Translation and Humanities
+                      {t('literaryTranslationAndHumanitiesTitleData')}
                     </NavLink>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
@@ -258,7 +258,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                       }
                       onClick={() => setActiveLink('/military-translation')}
                     >
-                      Military Translation
+                      {t('militaryTranslationTitleData')}
                     </NavLink>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
@@ -269,7 +269,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                       }
                       onClick={() => setActiveLink('/medical-translation')}
                     >
-                      Medical Translation
+                      {t('medicalTranslationTitleData')}
                     </NavLink>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
@@ -282,7 +282,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                       }
                       onClick={() => setActiveLink('/religious-translation')}
                     >
-                      Religious Translation
+                      {t('religiousTranslationTitleData')}
                     </NavLink>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
@@ -300,7 +300,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                         )
                       }
                     >
-                      Leisure, tourism and hospitality translation
+                      {t('leisureTourismAndHospitalityTranslationTitleData')}
                     </NavLink>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
@@ -315,7 +315,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                         setActiveLink('/economic-and-financial-translation')
                       }
                     >
-                      Economic and Financial Translation
+                      {t('economicAndFinancialTranslationTitleData')}
                     </NavLink>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
@@ -326,7 +326,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                       }
                       onClick={() => setActiveLink('/general-translation')}
                     >
-                      General Translation
+                      {t('generalTranslationTitleData')}
                     </NavLink>
                   </NavDropdown.Item>
                 </NavDropdown>
@@ -353,7 +353,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                         setActiveLink('/simultaneous-interpretation')
                       }
                     >
-                      Simultaneous Interpretation
+                      {t('simultaneousInterpretationTitleData')}
                     </NavLink>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
@@ -368,7 +368,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                         setActiveLink('/consecutive-interpretation')
                       }
                     >
-                      Consecutive Interpretation
+                      {t('consecutiveInterpretationTitleData')}
                     </NavLink>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
@@ -381,7 +381,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                       }
                       onClick={() => setActiveLink('/whispered-interpreting')}
                     >
-                      Whispered Interpreting
+                      {t('whisperedInterpretingTitleData')}
                     </NavLink>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
@@ -396,7 +396,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                         setActiveLink('/event-and-conference-equipment-supply')
                       }
                     >
-                      Event and conference equipment supply
+                      {t('eventAndConferenceEquipmentSupplyTitleData')}
                     </NavLink>
                   </NavDropdown.Item>
                   <NavDropdown.Item>
@@ -405,7 +405,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                       className={activeLink === '/our-works' ? ' selected' : ''}
                       onClick={() => setActiveLink('/our-works')}
                     >
-                      Our works
+                      {t('ourWorksTitleData')}
                     </NavLink>
                   </NavDropdown.Item>
                 </NavDropdown>
@@ -428,7 +428,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                     }
                     onClick={() => setActiveLink('/desktop-publishing')}
                   >
-                    Desktop Publishing
+                    {t('desktopPublishingTitleData')}
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
@@ -441,7 +441,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                     }
                     onClick={() => setActiveLink('/proofreading-and-editing')}
                   >
-                    Proofreading and editing
+                    {t('proofreadingAndEditingTitleData')}
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
@@ -456,7 +456,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                       setActiveLink('/web-content-translation-and-localization')
                     }
                   >
-                    Web content translation and localization
+                    {t('webContentTranslationAndLocalizationTitleData')}
                   </NavLink>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
