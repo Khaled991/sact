@@ -4,6 +4,8 @@ import {
   webContentTranslationAndLocalization,
   transcription,
 } from './categories/caregories';
+import { confidentiality } from './confidentiality';
+import { cookiesPolicy } from './cookiesPolicy';
 import {
   englishLanguage,
   french,
@@ -62,4 +64,6 @@ export const rootData = [
   proofreadingAndEditing,
   webContentTranslationAndLocalization,
   transcription,
+  cookiesPolicy,
+  confidentiality,
 ];

@@ -1,6 +1,5 @@
 {
   "bannerTitle": "New Translation",
-  "bannerGoodWord": "Translators house library",
   "blog": "blog",
   "contact": "Contact",
 
@@ -118,6 +117,7 @@
   "to": "To",
   "requestStatus": "Request Status",
   "notes": "Notes",
+  "message": "Message",
 
   "normal": "Normal",
   "urgent": "Urgent",
@@ -162,6 +162,8 @@
   "interpreter": "Interpreter",
   "JoinOurPoolofFreelancers": "Join Our Pool of Freelancers",
 
+  "yourEnquiry": "Your Enquiry",
+  "send": "Send",
   "age": "Age",
   "gender": "Gender",
   "nationality": "Nationality",
@@ -200,5 +202,18 @@
 
   "customerReviewsName6": "Makady almizar",
   "customerReviewsAdjective6": "local guide",
-  "customerReviewsDescription6": "It was a great experience for the first time and will not the last of course.. many thanks"
+  "customerReviewsDescription6": "It was a great experience for the first time and will not the last of course.. many thanks",
+
+  "confidentiality": "Confidentiality",
+  "confidentialityDescriptionData": "Confidentiality, security and protection of our customers’ information and data is of highly important to us. We are proud to announce that we developed innovative systems \nover the past 4 years that it empowered us to become one of the leading specialized language firms to be granted certification for our global systems and services. We apply \nthe international standards for information security assurance.\n\n  Your data and documents are in the heart of our work as we ensure that only the appropriate people have access to client data and information. All our staff and linguists have \nto go through full background checks and are bound by confidentiality agreements and impartiality articles that cover all work and other communications they engage in. Our \nproject managers check and monitor various linguistics works during every assignment to ensure compliance.\n\n  We have secured sending systems concerning all data when transmitted through secure means or via our own FTP servers. It is held in accordance with Data Protection standards.\n\n  We are keen on keeping our linguistic works safe so as to handle highly confidential material on a daily basis in addition to safe-keeping of such documents is a core part of \nour works and success.\n\n  We have partnerships with security and law-enforcement professionals who support us concerning specialized areas of business. This includes the recruitment and safe deployment \nof our linguists for high profile conferences. Special non-disclosure agreements are drafted for sensitive cases such as asset acquisitions and tenders.",
+  "cookiesPolicy": "Cookies Policy",
+  "cookiesPolicyDescriptionData": "Saleh Al Omar Certified Translation (SACT) website will automatically track certain information about you in the course of you using this website, such as your IP address and \nbrowser identification. This information is used only for system administration and for providing statistics to evaluate use of this site. We will use cookies to remember \nyour preferences during your current visit, and any future visits provided the cookie was not deleted in the interim.\n\n  We may remarket your information. Remarketing is a way for us to connect with users, based upon your past interactions with the Saleh Al Omar Certified Translation website. \nThird-party marketing vendors may be hired by Saleh Al Omar Certified Translation to perform remarketing services. As a result, third-party vendors, including Google, may \nshow Saleh Al Omar Certified Translation ads on sites on the internet. Third-party vendors, including Google, use cookies to serve ads based on users prior visits to SACT \nwebsite.\n\n  To opt out of customized Google Display Network ads click here. To find out more about how Google uses any data it collects please visit \nhttp://www.google.com/privacy_ads.html.\n\n  Any information collected is used only for remarketing purposes and will not be used by them for any other purpose.\n\n  We use \"cookies\" on this site. A cookie is a piece of data stored on a site visitor's hard drive to help us improve your access to our site and identify repeat visitors to our \nsite. For instance, when we use a cookie to identify you, you would not have to log in a password more than once, thereby saving time while on our site. Cookies can also \nenable us to track and target the interests of our users to enhance the experience on our site. Usage of a cookie is in no way linked to any personally identifiable \ninformation on our site. Some of our business partners may use cookies on our site (for example, advertisers). However, we have no access to or control over these cookies.",
+
+  "houseOfTransaltor": "House of Transaltor",
+
+  "customerSupport": "Customer Support",
+  "customerFeedback": "Customer Feedback",
+  "contactUs": "Contact us",
+  "callNowforServices": "Call now for services",
+  "ourVegenTo2030": "Saudi Vision 2030 emerges with our vision for the prosperity of the Kingdom."
 }

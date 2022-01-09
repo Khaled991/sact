@@ -10,16 +10,13 @@ import { t } from 'i18next';
 const Footer = (): ReactElement => {
   return (
     <div className="footer">
-      <span className="footer__top">
-        Saudi Vision 2030 emerges with our vision for the prosperity of the
-        Kingdom.
-      </span>
+      <span className="footer__top">{t('ourVegenTo2030')}</span>
 
       <div className="footer__content">
         <Row>
           <Col xs={12} md={4} className="footer__cols">
             <div>
-              <span className="footer__title">Call now for Services</span>
+              <span className="footer__title">{t('callNowforServices')}</span>
               <a href="tel:+966561114395" className="footer__description">
                 <Call className="footer__icon footer__icon--call" />
                 +966561114395
@@ -37,26 +34,26 @@ const Footer = (): ReactElement => {
           </Col>
           <Col xs={12} md={4} className="footer__cols">
             <div>
-              <span className="footer__title">Services</span>
-              <a href="sds" className="footer__description">
-                Confidentiality
+              <span className="footer__title">{t('services')}</span>
+              <a href="/confidentiality" className="footer__description">
+                {t('confidentiality')}
+              </a>
+              <a href="/cookiesPolicy" className="footer__description">
+                {t('cookiesPolicy')}
               </a>
               <a href="sda" className="footer__description">
-                Cookies Policy
-              </a>
-              <a href="sda" className="footer__description">
-                House of Transaltor
+                {t('houseOfTransaltor')}
               </a>
             </div>
           </Col>
           <Col xs={12} md={4} className="footer__cols">
             <div>
-              <span className="footer__title">Customer Support</span>
-              <a href="sds" className="footer__description">
-                Customer Feedback
+              <span className="footer__title">{t('customerSupport')}</span>
+              <a href="/customerFeedback" className="footer__description">
+                {t('customerFeedback')}
               </a>
-              <a href="sda" className="footer__description">
-                Contact us
+              <a href="/contactUs" className="footer__description">
+                {t('contactUs')}
               </a>
             </div>
           </Col>
@@ -78,7 +75,7 @@ const Footer = (): ReactElement => {
         <Col xs={12} md={4} className="footer__bottom-cols">
           <div className="footer__socil-media-container">
             {socilMediaData.map(({ link, Icon }, i) => (
-              <a href={link} key={i}>
+              <a target="_blank" rel="noreferrer" href={link} key={i}>
                 <Icon />
               </a>
             ))}

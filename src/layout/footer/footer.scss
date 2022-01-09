@@ -41,7 +41,7 @@
   }
 
   &__icon {
-    margin-right: 1rem;
+    margin: 0 1rem;
     &--call {
       width: 2.5rem;
     }
@@ -71,10 +71,7 @@
       width: 3rem;
       height: 3rem;
       margin: 0 0.5rem;
-      &:last-child {
-        width: 4rem;
-        height: 4rem;
-      }
+
       & > * {
         width: 100%;
         height: 100%;

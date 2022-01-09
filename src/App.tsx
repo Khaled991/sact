@@ -9,6 +9,8 @@ import { ISecondaryLayout } from './models/ISecondaryLayout';
 import { rootData } from './data/root';
 import CvSearch from './pages/cvSearch/cvSearch';
 import JoinUsLayout from './pages/joinUs/joinUs';
+import ContactUs from './pages/contactUs/contactUs';
+import CustomerFeedback from './pages/customerFeedback/customerFeedback';
 
 const Home = lazy(() => import('./pages/home/home'));
 const AboutUS = lazy(() => import('./pages/aboutUS/aboutUs'));
@@ -48,6 +50,8 @@ function App() {
               <Route path="/getAFreeQoute" element={<GetFreeQoute />} />
               <Route path="/cvsearch" element={<CvSearch />} />
               <Route path="/joinus" element={<JoinUsLayout />} />
+              <Route path="/contactUs" element={<ContactUs />} />
+              <Route path="/customerFeedback" element={<CustomerFeedback />} />
               {rootData.map(
                 ({ description, path, primaryTitle }: ISecondaryLayout) => (
                   <Route
