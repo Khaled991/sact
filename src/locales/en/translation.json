@@ -215,5 +215,29 @@
   "customerFeedback": "Customer Feedback",
   "contactUs": "Contact us",
   "callNowforServices": "Call now for services",
-  "ourVegenTo2030": "Saudi Vision 2030 emerges with our vision for the prosperity of the Kingdom."
+  "ourVegenTo2030": "Saudi Vision 2030 emerges with our vision for the prosperity of the Kingdom.",
+
+  "firsname": "Firsname",
+  "lastName": "LastName",
+  "jobLevel": "Job Level",
+  "employmentType": "Employment Type",
+  "requiredJobRole": "Required Job Role",
+  "previousWorkPlaces": "Previous Work Places",
+
+  "male": "Male",
+  "female": "Female",
+  "married": "Married",
+  "single": "Single",
+  "divorce": "Divorce",
+  "beginner": "Beginner",
+  "experienced": "Experienced",
+  "administrative": "Administrative",
+
+  "fullTime": "Full Time",
+  "partTime": "Part Time",
+  "freelancer": "Freelancer",
+  "contracts": "Contracts",
+  "register": "Register",
+  "jobSeeker": "Job Seeker",
+  "jobSeekerDescription": "Just build your cv with us and get a challenging job"
 }

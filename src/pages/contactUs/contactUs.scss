@@ -1,5 +1,45 @@
+@import '../../sass/variables';
 .contact-us {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 1.9rem;
+  .message-and-official-working-time {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    .official-working-table {
+      border-radius: 4rem;
+      margin: 1.5rem 0;
+      display: flex;
+      margin: 2rem;
+      & th,
+      & td {
+        border: 0.1rem solid $color-primary;
+        padding: 12px 40px;
+      }
+    }
+  }
+  .our-offices {
+    margin: 2rem 0;
+    .offices-description {
+      margin: 2rem 0;
+    }
+  }
+  .google-map {
+    margin: 2rem 0;
+    width: 100%;
+    min-height: 40rem;
+  }
+}
+@media (max-width: 991px) {
+  .contact-us {
+    .message-and-official-working-time {
+      flex-direction: column;
+    }
+  }
+  .our-offices {
+    text-align: center;
+  }
 }

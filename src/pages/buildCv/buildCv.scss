@@ -1,0 +1,19 @@
+@import '../../sass/variables';
+
+.build-cv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: $custom-box-shadow-1;
+  font-size: 1.8rem;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 991px) {
+  .build-cv {
+    box-shadow: none;
+    padding: 0;
+  }
+}

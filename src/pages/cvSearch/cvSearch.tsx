@@ -4,6 +4,7 @@ import { ReactElement } from 'react';
 import CustomButton, { ButtonType } from '../../components/Button/button';
 import { ReactComponent as Search } from '../../assets/icon/search.svg';
 import CvCard from '../../layout/cvCard/cvCard';
+import { NavLink } from 'react-router-dom';
 
 const CvSearch = (): ReactElement => {
   return (
@@ -20,7 +21,14 @@ const CvSearch = (): ReactElement => {
             <Search />
           </button>
         </div>
-        <CustomButton type={ButtonType.solid}>{t('buildYourCv')}</CustomButton>
+        <CustomButton type={ButtonType.solid}>
+          <NavLink
+            to="/build-cv"
+            style={{ textDecoration: 'none', color: '#fff' }}
+          >
+            {t('buildYourCv')}
+          </NavLink>
+        </CustomButton>
       </div>
       <CvCard />
       <CvCard />

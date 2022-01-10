@@ -11,6 +11,7 @@ import CvSearch from './pages/cvSearch/cvSearch';
 import JoinUsLayout from './pages/joinUs/joinUs';
 import ContactUs from './pages/contactUs/contactUs';
 import CustomerFeedback from './pages/customerFeedback/customerFeedback';
+import BuildCv from './pages/buildCv/buildCv';
 
 const Home = lazy(() => import('./pages/home/home'));
 const AboutUS = lazy(() => import('./pages/aboutUS/aboutUs'));
@@ -52,6 +53,7 @@ function App() {
               <Route path="/joinus" element={<JoinUsLayout />} />
               <Route path="/contactUs" element={<ContactUs />} />
               <Route path="/customerFeedback" element={<CustomerFeedback />} />
+              <Route path="/build-cv" element={<BuildCv />} />
               {rootData.map(
                 ({ description, path, primaryTitle }: ISecondaryLayout) => (
                   <Route

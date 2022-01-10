@@ -214,5 +214,28 @@
   "customerFeedback": "إستطلاع رأى العملاء",
   "contactUs": "تواصل معنا",
   "callNowforServices": "اتصل بنا لخدمتك",
-  "ourVegenTo2030": "تنبثق رؤية المملكة العربية السعودية 2030 مع رؤيتنا لازدهار المملكة."
+  "ourVegenTo2030": "تنبثق رؤية المملكة العربية السعودية 2030 مع رؤيتنا لازدهار المملكة.",
+
+  "firsname": "الاسم الاول",
+  "lastName": "اسم العائلة",
+  "jobLevel": "مستوى الوظيفة",
+  "employmentType": "نوع الوظيفة",
+  "requiredJobRole": "الدور الوظيفي المطلوب",
+  "previousWorkPlaces": "أماكن العمل السابقة",
+
+  "male": "ذكر",
+  "female": "أنثى",
+  "married": "متزوج",
+  "single": "اعزب",
+  "divorce": "مطلق",
+  "beginner": "مبتدئ",
+  "experienced": "يختبر",
+  "administrative": "إداري",
+  "fullTime": "وقت كامل",
+  "partTime": "دوام جزئى",
+  "freelancer": "مستقل",
+  "contracts": "عقود",
+  "register": "التسجيل",
+  "jobSeeker": "طالب عمل",
+  "jobSeekerDescription": "فقط قم ببناء سيرتك الذاتية معنا واحصل على وظيفة صعبة"
 }

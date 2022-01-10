@@ -7,7 +7,7 @@ export enum ButtonType {
 }
 
 interface CustomButtonProps {
-  children: any;
+  children: React.ReactNode;
   type: ButtonType;
 }
 
