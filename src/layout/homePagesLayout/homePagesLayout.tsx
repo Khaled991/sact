@@ -5,22 +5,20 @@ import Typography, {
 } from '../../components/typography/typography';
 import './homePagesLayout.scss';
 import homePageImage from '../../assets/img/image-part-1.svg';
-// import SupportCompany from '../../components/supportCompany/supportCompany';
+import SupportCompany from '../../components/supportCompany/supportCompany';
 
 interface HomePagesLayoutProps {
   children: any;
   primaryText: string;
   secondaryText: string;
   tertiaryText: string;
-  // background: any;
 }
 const HomePagesLayout = ({
   children,
   primaryText,
   secondaryText,
   tertiaryText,
-}: // background,
-HomePagesLayoutProps): ReactElement => {
+}: HomePagesLayoutProps): ReactElement => {
   return (
     <>
       <Col md={6}>
@@ -46,7 +44,7 @@ HomePagesLayoutProps): ReactElement => {
           className="home-page__image"
         />
       </Col>
-      {/* <SupportCompany /> */}
+      <SupportCompany />
     </>
   );
 };

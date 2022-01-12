@@ -3,23 +3,31 @@ import { ReactComponent as Blog } from '../../assets/icon/blog.svg';
 import { ReactComponent as Contact } from '../../assets/icon/contact.svg';
 import { ReactComponent as Language } from '../../assets/icon/language.svg';
 import { t } from 'i18next';
-// import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 interface IBannerProps {
   changeLanguage: () => void;
 }
 
 const Banner = ({ changeLanguage }: IBannerProps): ReactElement => {
-  // let navigate = useHistory();
+  let navigate = useNavigate();
 
   const bannerNavButton = [
-    { title: t('blog'), Icon: Blog, onClick: () => {} },
-    { title: t('contact'), Icon: Contact, onClick: () => {} },
+    {
+      title: t('blog'),
+      Icon: Blog,
+      onClick: () => {},
+      // onClick: () => navigate('/blog'),
+    },
+    {
+      title: t('contact'),
+      Icon: Contact,
+      onClick: () => navigate('/contactUs'),
+    },
     {
       title: localStorage.getItem('i18nextLng') === 'en' ? 'AR' : 'EN',
       Icon: Language,
       onClick: () => changeLanguage(),
-      // onClick: () => {},
     },
   ];
   return (

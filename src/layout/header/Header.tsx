@@ -87,7 +87,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                     drop="end"
                     title={
                       <>
-                        {t('ajorlanguages')}
+                        {t('majorlanguages')}
                         <DownArrow className="right-arrow" />
                       </>
                     }

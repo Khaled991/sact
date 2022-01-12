@@ -237,5 +237,20 @@
   "contracts": "عقود",
   "register": "التسجيل",
   "jobSeeker": "طالب عمل",
-  "jobSeekerDescription": "فقط قم ببناء سيرتك الذاتية معنا واحصل على وظيفة صعبة"
+  "jobSeekerDescription": "فقط قم ببناء سيرتك الذاتية معنا واحصل على وظيفة صعبة",
+
+  "saturday": "السبت",
+  "sunday": "الأحد",
+  "monday": "الاثنين",
+  "tuesday": "يوم الثلاثاء",
+  "wednesday": "الأربعاء",
+  "thursday": "يوم الخميس",
+  "firday": "يوم الجمعة",
+  "closed": "مغلق",
+  "ourOffices": "مكاتبنا",
+  "alOlayaBranch": "فرع العليا",
+  "makkahAlMukarramahBranch": "فرع مكة المكرمة",
+  "salehAlOmarCertifiedTranslation": "صالح آل عمر للترجمة المعتمدة",
+  "secondLocation": "2059 طريق مكة المكرمة ، الرياض",
+  "telephone": "رقم الهاتف"
 }

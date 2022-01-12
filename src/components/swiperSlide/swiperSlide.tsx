@@ -1,7 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 import './swiperSlide.scss';
 import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper';
 import { t } from 'i18next';

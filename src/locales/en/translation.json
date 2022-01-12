@@ -239,5 +239,20 @@
   "contracts": "Contracts",
   "register": "Register",
   "jobSeeker": "Job Seeker",
-  "jobSeekerDescription": "Just build your cv with us and get a challenging job"
+  "jobSeekerDescription": "Just build your cv with us and get a challenging job",
+
+  "saturday": "Saturday",
+  "sunday": "Sunday",
+  "monday": "Monday",
+  "tuesday": "Tuesday",
+  "wednesday": "Wednesday",
+  "thursday": "Thursday",
+  "firday": "Firday",
+  "closed": "Closed",
+  "ourOffices": "Our Offices",
+  "alOlayaBranch": "AlOlaya Branch",
+  "makkahAlMukarramahBranch": "AlOlaya Branch",
+  "salehAlOmarCertifiedTranslation": "Saleh Al Omar Certified Translation",
+  "secondLocation": "2059 Makkah AlMukarramah Rd,Riyadh",
+  "telephone": "Telephone"
 }

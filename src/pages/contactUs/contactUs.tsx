@@ -60,56 +60,55 @@ const ContactUs = (): ReactElement => {
         <table className="official-working-table">
           <tbody>
             <tr>
-              <th>Saturday</th>
+              <th>{t('saturday')}</th>
               <td>11:00 AM - 05:00 PM</td>
             </tr>
-            <th>Sunday</th>
+            <th>{t('sunday')}</th>
             <td>08:30 AM - 09:00 PM</td>
             <tr>
-              <th>Monday</th>
+              <th>{t('monday')}</th>
               <td>08:30 AM - 09:00 PM</td>
             </tr>
-            <th>Tuesday</th>
+            <th>{t('tuesday')}</th>
             <td>08:30 AM - 09:00 PM</td>
             <tr>
-              <th>Wednesday</th>
+              <th>{t('wednesday')}</th>
               <td>08:30 AM - 09:00 PM</td>
             </tr>
             <tr>
-              <th>Thursday</th>
+              <th>{t('thursday')}</th>
               <td>08:30 AM - 09:00 PM</td>
             </tr>
             <tr>
-              <th>Firday</th>
-              <td>Closed</td>
+              <th>{t('firday')}</th>
+              <td>{t('closed')}</td>
             </tr>
           </tbody>
         </table>
       </div>
       <Row className="our-offices">
         <Typography type={TypographyType.secondary} color="#f1923d">
-          Our Offices
+          {t('ourOffices')}
         </Typography>
         <Col md={6} className="offices-description">
-          AlOlaya Branch
+          {t('alOlayaBranch')}
           <br />
-          Saleh Al Omar Certified Translation
+          {t('salehAlOmarCertifiedTranslation')}
           <br />
-          Address: 8592 King Fahd Rd, Tulip Tower, AlOlaya, Riyadh 12333-3802,
-          Kingdom of Saudi Arabia
+          {t('address')}: {'location'},
           <br />
-          Telephone: +966561114395
+          {t('telephone')}: +966561114395
           <br />
-          Email: info@sact.co
+          {t('Email')}: info@sact.co
         </Col>
         <Col md={6} className="offices-description">
-          Makkah AlMukarramah Branch
+          {t('makkahAlMukarramahBranch')}
           <br />
-          Saleh Al Omar Certified Translation
+          {t('salehAlOmarCertifiedTranslation')}
           <br />
-          Address: 2059 Makkah AlMukarramah Rd,Riyadh
+          {t('address')}: {t('secondLocation')}
           <br />
-          Telephone: 0542015599
+          {t('telephone')}: 0542015599
         </Col>
       </Row>
       <iframe src={mapUrl} className="google-map" loading="lazy" title="map" />

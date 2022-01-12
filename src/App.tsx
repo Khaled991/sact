@@ -12,6 +12,7 @@ import JoinUsLayout from './pages/joinUs/joinUs';
 import ContactUs from './pages/contactUs/contactUs';
 import CustomerFeedback from './pages/customerFeedback/customerFeedback';
 import BuildCv from './pages/buildCv/buildCv';
+import Blog from './pages/blog/blog';
 
 const Home = lazy(() => import('./pages/home/home'));
 const AboutUS = lazy(() => import('./pages/aboutUS/aboutUs'));
@@ -54,6 +55,7 @@ function App() {
               <Route path="/contactUs" element={<ContactUs />} />
               <Route path="/customerFeedback" element={<CustomerFeedback />} />
               <Route path="/build-cv" element={<BuildCv />} />
+              <Route path="/blog" element={<Blog />} />
               {rootData.map(
                 ({ description, path, primaryTitle }: ISecondaryLayout) => (
                   <Route

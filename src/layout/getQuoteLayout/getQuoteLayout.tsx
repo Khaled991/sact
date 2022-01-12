@@ -5,7 +5,8 @@ import CustomInput, {
 } from '../../components/customInput/customInput';
 import { Row, Col } from 'react-bootstrap';
 import CustomButton, { ButtonType } from '../../components/Button/button';
-import { ReactComponent as Visa } from '../../assets/icon/visa.svg';
+// import { ReactComponent as Visa } from '../../assets/icon/visa.svg';
+import Hyperpay from '../../assets/img/hyperpay.jpg';
 import CustomDropdown from '../../components/customDropdown/customDropdown';
 import { t } from 'i18next';
 import { IUserData } from './../../pages/getFreeQoute/getFreeQoute';
@@ -137,8 +138,9 @@ const GetQuoteLayout = ({
         <div className="box-footer">
           <CustomButton type={ButtonType.solid}>{t('getAQoute')}</CustomButton>
           <div className="visa-and-text">
-            <span className="visa-and-text__text">{t('payUsing')}</span>
-            <Visa className="visa-and-text__icon" />
+            <img src={Hyperpay} alt="" width="400px" />
+            {/* <span className="visa-and-text__text">{t('payUsing')}</span>
+            <Visa className="visa-and-text__icon" /> */}
           </div>
         </div>
       </form>
