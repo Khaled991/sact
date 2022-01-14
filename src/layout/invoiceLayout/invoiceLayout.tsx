@@ -77,17 +77,19 @@ const InvoiceLayout = ({ userData }: IInvoiceLayoutProps): ReactElement => {
           <table className="table">
             <tbody>
               <tr className="table__title">
-                <th>{t('requiredTranslation')}</th>
-                <th>{t('page')}</th>
-                <th>
+                <td className="invoice-table-title">
+                  {t('requiredTranslation')}
+                </td>
+                <td className="invoice-table-title">{t('page')}</td>
+                <td className="invoice-table-title">
                   {t('pagePrice')} {t('sar')}
-                </th>
-                <th>
+                </td>
+                <td className="invoice-table-title">
                   {t('vat')} {t('sar')}
-                </th>
-                <th>
+                </td>
+                <td className="invoice-table-title">
                   {t('totalPrice')} {t('sar')}
-                </th>
+                </td>
               </tr>
               <tr>
                 <td>{`${userData?.selectedFirstLng} ${t('to')} ${

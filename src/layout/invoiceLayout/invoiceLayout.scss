@@ -50,10 +50,13 @@
         border-radius: 4rem;
         margin: 1.5rem 0;
         text-align: center;
-        & th,
+
         & td {
           border: 0.1rem solid $color-primary;
           padding: 12px 15px;
+        }
+        .invoice-table-title {
+          font-weight: bold;
         }
       }
 
@@ -63,6 +66,9 @@
         margin: 2rem 0;
         .invoice-layout__notes-titel {
           font-weight: bold;
+        }
+        .invoice-layout__notes-description {
+          width: 50rem;
         }
       }
 

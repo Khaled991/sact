@@ -60,27 +60,27 @@ const ContactUs = (): ReactElement => {
         <table className="official-working-table">
           <tbody>
             <tr>
-              <th>{t('saturday')}</th>
+              <td className="week-days">{t('saturday')}</td>
               <td>11:00 AM - 05:00 PM</td>
             </tr>
-            <th>{t('sunday')}</th>
+            <td className="week-days">{t('sunday')}</td>
             <td>08:30 AM - 09:00 PM</td>
             <tr>
-              <th>{t('monday')}</th>
+              <td className="week-days">{t('monday')}</td>
               <td>08:30 AM - 09:00 PM</td>
             </tr>
-            <th>{t('tuesday')}</th>
+            <td className="week-days">{t('tuesday')}</td>
             <td>08:30 AM - 09:00 PM</td>
             <tr>
-              <th>{t('wednesday')}</th>
+              <td className="week-days">{t('wednesday')}</td>
               <td>08:30 AM - 09:00 PM</td>
             </tr>
             <tr>
-              <th>{t('thursday')}</th>
+              <td className="week-days">{t('thursday')}</td>
               <td>08:30 AM - 09:00 PM</td>
             </tr>
             <tr>
-              <th>{t('firday')}</th>
+              <td className="week-days">{t('firday')}</td>
               <td>{t('closed')}</td>
             </tr>
           </tbody>

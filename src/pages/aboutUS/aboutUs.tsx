@@ -13,8 +13,12 @@ const AboutUs = (): ReactElement => {
         alt="AboutUsImage"
         className="about-us__about-us-image"
       />
-      {AboutUsData.map(({ title, description }) => (
-        <SecondaryLayout primaryTitle={title} description={description} />
+      {AboutUsData.map(({ title, description }, i) => (
+        <SecondaryLayout
+          primaryTitle={title}
+          description={description}
+          key={i}
+        />
       ))}
     </div>
   );

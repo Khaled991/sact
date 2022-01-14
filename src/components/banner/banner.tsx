@@ -16,8 +16,8 @@ const Banner = ({ changeLanguage }: IBannerProps): ReactElement => {
     {
       title: t('blog'),
       Icon: Blog,
-      onClick: () => {},
-      // onClick: () => navigate('/blog'),
+      // onClick: () => {},
+      onClick: () => navigate('/blog'),
     },
     {
       title: t('contact'),

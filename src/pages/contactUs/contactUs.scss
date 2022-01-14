@@ -14,10 +14,13 @@
       margin: 1.5rem 0;
       display: flex;
       margin: 2rem;
-      & th,
+
       & td {
         border: 0.1rem solid $color-primary;
         padding: 12px 40px;
+      }
+      .week-days {
+        font-weight: bold;
       }
     }
   }

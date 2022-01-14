@@ -16,7 +16,12 @@ const SupportCompany = (): ReactElement => {
 
       <div className="photobanner">
         {shuffle(images).map((imgPath: string, i: number) => (
-          <img src={imgPath} alt={`SupportCompanys ${i + 1}`} height="50px" />
+          <img
+            src={imgPath}
+            alt={`SupportCompanys ${i + 1}`}
+            height="50px"
+            key={i}
+          />
         ))}
       </div>
       <div className="blur blur--right" />
