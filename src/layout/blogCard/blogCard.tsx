@@ -25,9 +25,13 @@ const BlogCard = ({
   const partOfdescription = description.split(' ').splice(0, 30).join(' ');
   return (
     <motion.article
-      initial={{ scale: 0, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 1 }}
+    // initial={{ scale: 0, opacity: 0 }}
+    // animate={{ scale: 1, opacity: 1, transition: { duration: 1 } }}
+    // // transition={{  }}
+    // whileHover={{
+    //   y: -10,
+    //   transition: { duration: 0.7 },
+    // }}
     >
       <Link to={`${pathname}/${id}`} rel="bookmark">
         <header className="entry-header">
