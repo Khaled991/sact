@@ -1,0 +1,29 @@
+@import '../../sass/variables';
+.blog-article {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  & > * {
+    width: 90%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  &__date {
+    font-size: 1.8rem;
+    color: $color-grey-dark-2;
+  }
+  &__img {
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+  }
+}

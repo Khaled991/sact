@@ -25,7 +25,7 @@ const Home = (): ReactElement => {
       >
         <CustomButton type={ButtonType.solid}>
           <NavLink
-            to="/getAFreeQoute"
+            to="/get-a-free-qoute"
             style={{ textDecoration: 'none', color: '#fff' }}
           >
             {t('getAFreeQuote')}

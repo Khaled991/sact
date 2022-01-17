@@ -49,10 +49,10 @@ const Footer = (): ReactElement => {
           <Col xs={12} md={4} className="footer__cols">
             <div>
               <span className="footer__title">{t('customerSupport')}</span>
-              <a href="/customerFeedback" className="footer__description">
+              <a href="/customer-feedback" className="footer__description">
                 {t('customerFeedback')}
               </a>
-              <a href="/contactUs" className="footer__description">
+              <a href="/contact-us" className="footer__description">
                 {t('contactUs')}
               </a>
             </div>

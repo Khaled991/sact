@@ -48,14 +48,14 @@ function App() {
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/aboutus" element={<AboutUS />} />
-              <Route path="/getAFreeQoute" element={<GetFreeQoute />} />
-              <Route path="/cvsearch" element={<CvSearch />} />
-              <Route path="/joinus" element={<JoinUsLayout />} />
-              <Route path="/contactUs" element={<ContactUs />} />
-              <Route path="/customerFeedback" element={<CustomerFeedback />} />
+              <Route path="/about-us" element={<AboutUS />} />
+              <Route path="/get-a-free-qoute" element={<GetFreeQoute />} />
+              <Route path="/cv-search" element={<CvSearch />} />
+              <Route path="/join-us" element={<JoinUsLayout />} />
+              <Route path="/contact-us" element={<ContactUs />} />
+              <Route path="/customer-feedback" element={<CustomerFeedback />} />
               <Route path="/build-cv" element={<BuildCv />} />
-              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/*" element={<Blog />} />
               {rootData.map(
                 ({ description, path, primaryTitle }: ISecondaryLayout) => (
                   <Route

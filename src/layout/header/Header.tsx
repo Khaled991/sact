@@ -6,12 +6,14 @@ import { t } from 'i18next';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { ReactComponent as DownArrow } from '../../assets/icon/down-arrow.svg';
+import { useTranslation } from 'react-i18next';
 
 interface IHeaderProps {
   changeLanguage: () => void;
 }
 
 const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
+  const { i18n } = useTranslation();
   const [currentScrollPosition, setCurrentScrollPosition] = useState<number>(0);
   const [activeLink, setActiveLink] = useState<string>('/');
 
@@ -19,7 +21,17 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
     document.addEventListener('scroll', function (e) {
       setCurrentScrollPosition(window.scrollY);
     });
+    // dropDownItemsDirection();
   }, []);
+
+  const handleDropSideDiraction = {
+    transform: i18n.language === 'en' ? `rotate(270deg)` : `rotate(90deg)`,
+  };
+  const dropDownDirection = i18n.language === 'en' ? 'end' : 'start';
+  // const dropDownItemsDirection = () => {
+  //   document.querySelector('NavDropdown.Item')!.style.direction =
+  //     i18n.language === 'en' ? 'ltr' : 'rtl';
+  // };
 
   return (
     <header>
@@ -63,11 +75,14 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                 id="basic-nav-dropdown"
               >
                 <NavDropdown
-                  drop="end"
+                  drop={dropDownDirection}
                   title={
                     <>
                       {t('servicesLanguages')}
-                      <DownArrow className="right-arrow" />
+                      <DownArrow
+                        className="right-arrow"
+                        style={handleDropSideDiraction}
+                      />
                     </>
                   }
                   id="nav-dropside"
@@ -84,11 +99,14 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                     </NavLink>
                   </NavDropdown.Item>
                   <NavDropdown
-                    drop="end"
+                    drop={dropDownDirection}
                     title={
                       <>
                         {t('majorlanguages')}
-                        <DownArrow className="right-arrow" />
+                        <DownArrow
+                          className="right-arrow"
+                          style={handleDropSideDiraction}
+                        />
                       </>
                     }
                     id="nav-dropside"
@@ -131,11 +149,14 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                     </NavDropdown.Item>
                   </NavDropdown>
                   <NavDropdown
-                    drop="end"
+                    drop={dropDownDirection}
                     title={
                       <>
                         {t('otherLanguages')}
-                        <DownArrow className="right-arrow" />
+                        <DownArrow
+                          className="right-arrow"
+                          style={handleDropSideDiraction}
+                        />
                       </>
                     }
                     id="nav-dropside"
@@ -213,11 +234,14 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                 </NavDropdown>
 
                 <NavDropdown
-                  drop="end"
+                  drop={dropDownDirection}
                   title={
                     <>
                       {t('servicesTranslation')}
-                      <DownArrow className="right-arrow" />
+                      <DownArrow
+                        className="right-arrow"
+                        style={handleDropSideDiraction}
+                      />
                     </>
                   }
                   id="nav-dropside"
@@ -332,11 +356,14 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                 </NavDropdown>
 
                 <NavDropdown
-                  drop="end"
+                  drop={dropDownDirection}
                   title={
                     <>
                       {t('servicesInterpretation')}
-                      <DownArrow className="right-arrow" />
+                      <DownArrow
+                        className="right-arrow"
+                        style={handleDropSideDiraction}
+                      />
                     </>
                   }
                   id="nav-dropside"
@@ -473,7 +500,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
               </NavDropdown>
 
               <NavLink
-                to="/cvsearch"
+                to="/cv-search"
                 className={activeLink === '/cvsearch' ? ' selected' : ''}
                 onClick={() => setActiveLink('/cvsearch')}
               >
@@ -481,14 +508,14 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
               </NavLink>
 
               <NavLink
-                to="/joinus"
+                to="/join-us"
                 className={activeLink === '/joinus' ? ' selected' : ''}
                 onClick={() => setActiveLink('/joinus')}
               >
                 {t('joinus')}
               </NavLink>
               <NavLink
-                to="/aboutus"
+                to="/about-us"
                 className={activeLink === '/aboutus' ? ' selected' : ''}
                 onClick={() => setActiveLink('/aboutus')}
               >

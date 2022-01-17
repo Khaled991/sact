@@ -1,104 +1,43 @@
 @import '../../sass/variables';
-#blog {
-  #content {
+.blog {
+  display: flex;
+
+  .site-main {
     display: flex;
+    flex-wrap: wrap;
+  }
 
-    .site-main {
-      display: flex;
-      flex-wrap: wrap;
-      // justify-content: center;
-      article {
-        padding: 2rem;
-        box-shadow: 0 0 2.2rem rgba(0, 0, 0, 0.2);
-        border-radius: 0.5rem;
-        width: 40%;
-        margin: 2rem;
-        transition: all 0.8s;
-        &:hover {
-          transform: scale(1.02);
-          box-shadow: 0 1.4rem 2.5rem rgba(0, 0, 0, 0.2);
-          & img {
-            transform: scale(1.02);
-          }
-        }
-        .entry-header {
-          width: 100%;
-          & img {
-            transition: all 0.8s;
-            cursor: pointer;
-            width: 100%;
-          }
-          & a {
-            color: inherit;
-            cursor: pointer;
-            transition: all 0.2s;
-            &:hover {
-              color: $color-grey-dark-2;
-            }
-          }
-          .entry-meta {
-            color: $color-grey-dark-2;
-            margin: 0.5rem 0;
-            .comments-link {
-              margin: 0 0.4rem;
+  .side-widget {
+    font-size: 1.6rem;
 
-              &:hover {
-                border-bottom: 0.1rem solid $color-grey-dark-2;
-              }
-            }
-          }
-        }
-        .entry-summary {
-          width: 100%;
-          font-size: 1.7rem;
-          margin-top: 0.5rem;
-          color: $color-grey-dark-2;
-
-          .more-link {
-            white-space: nowrap;
-            color: $color-grey-dark-2;
-            border-bottom: 0.1rem solid $color-grey-dark-2;
-            &:hover {
-              color: $color-grey-dark-1;
-            }
-          }
-        }
-      }
+    &__header {
+      margin: 1rem 0;
     }
-    .side-widget {
-      font-size: 1.6rem;
 
-      &__header {
-        margin: 1rem 0;
-      }
-
-      &__title {
-        font-size: 1.8rem;
-        font-weight: bold;
-      }
-      &__img {
-        width: 10rem;
-
-        // height: 8rem;
-      }
-      @media (max-width: 1199px) {
-        display: none;
-      }
+    &__title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 1.3rem 0;
+      text-transform: capitalize;
+    }
+    &__img {
+      width: 10rem;
+    }
+    @media (max-width: 1199px) {
+      display: none;
     }
   }
 }
 
 @media (max-width: 1199px) {
-  #blog {
-    #content {
-      .site-main {
-        article {
-          width: 100%;
-        }
+  #content {
+    .site-main {
+      article {
+        width: 100%;
       }
-      .side-widget {
-        display: none;
-      }
+    }
+    .side-widget {
+      display: none;
     }
   }
 }

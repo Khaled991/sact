@@ -55,6 +55,9 @@ header {
         border-radius: 0.5rem;
         min-width: 20rem;
 
+        .dropstart .dropdown-toggle::before {
+          display: none;
+        }
         & > * {
           padding: 0.8rem;
         }
@@ -120,10 +123,9 @@ header {
         .right-arrow {
           width: 0.7rem;
           height: 0.7rem;
-          margin-left: 0.4rem;
+          margin: 0 0.4rem;
           stroke: $color-grey-dark-1;
           transition: all 0.2s;
-          transform: rotate(270deg);
         }
 
         &:hover {

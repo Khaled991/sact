@@ -1,0 +1,61 @@
+@import '../../sass/variables';
+
+article {
+  padding: 2rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.14);
+  border-radius: 0.5rem;
+  width: 40%;
+  margin: 2rem;
+  transition: all 0.5s;
+
+  &:hover {
+    transform: translateY(-2rem);
+    box-shadow: 0 1rem 1.2rem rgba(0, 0, 0, 0.2);
+  }
+  .entry-header {
+    width: 100%;
+    & img {
+      transition: all 0.5s;
+      cursor: pointer;
+      width: 100%;
+    }
+    & a {
+      color: inherit;
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover {
+        color: $color-grey-dark-2;
+      }
+    }
+    &__title {
+      color: $color-grey-dark-1;
+    }
+    .entry-meta {
+      color: $color-grey-dark-2;
+      margin: 0.5rem 0;
+      .comments-link {
+        margin: 0 0.4rem;
+
+        &:hover {
+          border-bottom: 0.1rem solid $color-grey-dark-2;
+        }
+      }
+    }
+  }
+  .entry-summary {
+    width: 100%;
+    font-size: 1.7rem;
+    margin-top: 1rem;
+    color: $color-grey-dark-2;
+
+    .more-link {
+      white-space: nowrap;
+      color: $color-grey-dark-2;
+      border-bottom: 0.1rem solid $color-grey-dark-2;
+      margin: 0 0.5rem;
+      &:hover {
+        color: $color-grey-dark-1;
+      }
+    }
+  }
+}
