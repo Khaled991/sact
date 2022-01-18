@@ -6,6 +6,7 @@ import Typography, {
 import { blogData, IblogData } from '../blog/blog.data';
 import './blogArticale.scss';
 import { motion } from 'framer-motion';
+import { t } from 'i18next';
 
 const BlogArticle = (): ReactElement => {
   let params = useParams();
@@ -23,9 +24,9 @@ const BlogArticle = (): ReactElement => {
           transition={{ duration: 1.2 }}
           className="blog-article__title"
         >
-          {title}
+          {t(title)}
         </motion.span>
-        <span className="blog-article__date">{date}</span>
+        <span className="blog-article__date">{t(date)}</span>
       </div>
       <motion.img
         initial={{ opacity: 0 }}
@@ -35,7 +36,7 @@ const BlogArticle = (): ReactElement => {
         alt="article-img"
         className="blog-article__img"
       />
-      <Typography type={TypographyType.tertiary}>{description}</Typography>
+      <Typography type={TypographyType.tertiary}>{t(description)}</Typography>
     </div>
   );
 };

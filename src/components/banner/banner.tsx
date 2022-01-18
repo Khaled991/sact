@@ -22,7 +22,7 @@ const Banner = ({ changeLanguage }: IBannerProps): ReactElement => {
     {
       title: t('contact'),
       Icon: Contact,
-      onClick: () => navigate('/contactUs'),
+      onClick: () => navigate('/contact-us'),
     },
     {
       title: localStorage.getItem('i18nextLng') === 'en' ? 'AR' : 'EN',

@@ -2,7 +2,6 @@ import { t } from 'i18next';
 import { ReactElement } from 'react';
 import './blogCard.scss';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
 
 interface IBlogCard {
   id: number;
@@ -22,17 +21,10 @@ const BlogCard = ({
   const location = useLocation();
   const pathname = location.pathname;
 
-  const partOfdescription = description.split(' ').splice(0, 30).join(' ');
+  const partOfdescription = t(description).split(' ').splice(0, 30).join(' ');
+
   return (
-    <motion.article
-    // initial={{ scale: 0, opacity: 0 }}
-    // animate={{ scale: 1, opacity: 1, transition: { duration: 1 } }}
-    // // transition={{  }}
-    // whileHover={{
-    //   y: -10,
-    //   transition: { duration: 0.7 },
-    // }}
-    >
+    <article>
       <Link to={`${pathname}/${id}`} rel="bookmark">
         <header className="entry-header">
           <h1 className="entry-header__title">{t(title)}</h1>
@@ -54,7 +46,7 @@ const BlogCard = ({
           </Link>
         </p>
       </div>
-    </motion.article>
+    </article>
   );
 };
 
