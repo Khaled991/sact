@@ -5,34 +5,33 @@ import CustomInput, {
 } from '../../components/customInput/customInput';
 import { Row, Col } from 'react-bootstrap';
 import CustomButton, { ButtonType } from '../../components/Button/button';
-// import { ReactComponent as Visa } from '../../assets/icon/visa.svg';
 import Hyperpay from '../../assets/img/hyperpay.jpg';
 import CustomDropdown from '../../components/customDropdown/customDropdown';
 import { t } from 'i18next';
-import { IUserData } from './../../pages/getFreeQoute/getFreeQoute';
+import ShowToast from '../../components/Toast/Toast';
 
 interface IGetQuoteLayoutProps {
-  setUserData: (userData: IUserData) => void;
   setNavToInvoice: (navToInvoice: boolean) => void;
-  userData: IUserData;
+  formData: FormData;
+  setFormData: (key: string, value: string | Blob) => void;
 }
 
 const GetQuoteLayout = ({
-  setUserData,
   setNavToInvoice,
-  userData,
+  formData,
+  setFormData,
 }: IGetQuoteLayoutProps): ReactElement => {
-  const setSelectedFirstLng = (selectedFirstLng: string) =>
-    setUserData({ ...userData, selectedFirstLng });
-  const setSelectedSecondLng = (selectedSecondLng: string) =>
-    setUserData({ ...userData, selectedSecondLng });
+  const setselectedFromLanguage = (selectedFromLanguage: string) =>
+    setFormData('selectedFromLanguage', selectedFromLanguage);
+  const setselectedToLanguage = (selectedToLanguage: string) =>
+    setFormData('selectedToLanguage', selectedToLanguage);
   const setSelectedRequest = (selectedRequest: string) =>
-    setUserData({ ...userData, selectedRequest });
+    setFormData('selectedRequest', selectedRequest);
 
   const onChangeField = ({
     target: { value, name },
   }: React.ChangeEvent<HTMLInputElement>) => {
-    setUserData({ ...userData, [name]: value });
+    setFormData(name, value);
   };
 
   const languagesItem = [
@@ -49,20 +48,27 @@ const GetQuoteLayout = ({
 
   const onSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (userData?.selectedFirstLng === '')
-      return alert('Choose the language from which you will translate');
-    if (userData?.selectedSecondLng === '')
-      return alert('Choose the language you will translate into');
-    if (userData?.selectedRequest === '') return alert('Choose request status');
-    if (userData?.selectedFirstLng === userData?.selectedSecondLng)
-      return alert('Please change second language');
-
-    setNavToInvoice(true);
+    if (formData.get('selectedFromLanguage') === null) {
+      return ShowToast({
+        type: 'error',
+        msg: t('pleaseChooseTheLanguageFromWhichYouWillTranslate'),
+      });
+    } else if (formData.get('selectedToLanguage') === null) {
+      return ShowToast({
+        type: 'error',
+        msg: t('pleaseChooseTheLanguageYouWillTranslateInto'),
+      });
+    } else if (
+      formData.get('selectedFromLanguage') ===
+      formData.get('selectedToLanguage')
+    ) {
+      return ShowToast({ type: 'error', msg: t('pleaseChangeSecondLanguage') });
+    } else if (formData.get('selectedRequest') === null) {
+      return ShowToast({ type: 'error', msg: t('pleaseChooseRequestStatus') });
+    } else {
+      setNavToInvoice(true);
+    }
   };
-
-  // useEffect(() => {
-  //   console.log(userData);
-  // }, [userData]);
 
   return (
     <div className="get-quote-layout">
@@ -113,18 +119,25 @@ const GetQuoteLayout = ({
             <CustomDropdown
               title={t('languageFrom')}
               item={languagesItem}
-              setSelected={setSelectedFirstLng}
+              setSelected={setselectedFromLanguage}
             />
           </Col>
           <Col>
             <CustomDropdown
               title={t('to')}
               item={languagesItem}
-              setSelected={setSelectedSecondLng}
+              setSelected={setselectedToLanguage}
             />
           </Col>
         </Row>
-        <CustomInput type="file" name="project_file" onChange={onChangeField} />
+        <CustomInput
+          type="file"
+          name="project_file"
+          onChange={({ target: { files, name } }: any) => {
+            if (files != null) setFormData(name, files[0]);
+          }}
+        />
+
         <CustomDropdown
           title={t('requestStatus')}
           item={[t('normal'), t('urgent')]}
@@ -136,11 +149,9 @@ const GetQuoteLayout = ({
           onChange={onChangeField}
         />
         <div className="box-footer">
-          <CustomButton type={ButtonType.solid}>{t('getAQoute')}</CustomButton>
-          <div className="visa-and-text">
-            <img src={Hyperpay} alt="" width="400px" />
-            {/* <span className="visa-and-text__text">{t('payUsing')}</span>
-            <Visa className="visa-and-text__icon" /> */}
+          <CustomButton type={ButtonType.solid}>{t('getAQuote')}</CustomButton>
+          <div className="hyperpay-payment-icon">
+            <img src={Hyperpay} alt="payment" width="100%" />
           </div>
         </div>
       </form>
@@ -149,6 +160,3 @@ const GetQuoteLayout = ({
 };
 
 export default GetQuoteLayout;
-
-// من الانجليزي الي العربي هيبقي السعر 80ريال + 15% ضريبة
-// من اي لغات اخري هيبقي السعر 140ريال + 15% ضريبة

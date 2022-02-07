@@ -1,47 +1,90 @@
 import { ReactElement, useEffect, useState } from 'react';
 import './invoiceLayout.scss';
-import { IUserData } from './../../pages/getFreeQoute/getFreeQoute';
 import Typography, {
   TypographyType,
 } from '../../components/typography/typography';
 import Logo from '../../assets/img/logo.png';
 import CustomButton, { ButtonType } from '../../components/Button/button';
 import { t } from 'i18next';
+import axios from 'axios';
+import ShowToast from '../../components/Toast/Toast';
 
 interface IInvoiceLayoutProps {
-  userData: IUserData;
+  formData: FormData;
+  setFormData: (key: string, value: string | Blob) => void;
 }
 
-const InvoiceLayout = ({ userData }: IInvoiceLayoutProps): ReactElement => {
+const InvoiceLayout = ({
+  formData,
+  setFormData,
+}: IInvoiceLayoutProps): ReactElement => {
   const [unitPrice, setUnitPrice] = useState<number>(0);
-
+  const [invoiceId, setInvoiceId] = useState<string>('');
+  // من الانجليزي الي العربي أو العكس هيبقي السعر 80ريال + 15% ضريبة
+  // من اي لغات اخري هيبقي السعر 140ريال + 15% ضريبة
   const totalPrice = () => {
-    return Number(userData?.numberOfPage ?? 0) * unitPrice;
+    return Number(formData.get('numberOfPage') ?? 0) * unitPrice;
   };
   const totalAndVatPrice = () => {
     return Number((totalPrice() * 1.15).toString().split('.')[0]) + 1;
   };
 
-  const vat = () => {
+  const calculateVat = () => {
     return totalPrice() * 0.15;
   };
 
+  const newDate = new Date().toLocaleDateString();
+
+  const handleEmailAndPayment = async () => {
+    setFormData('invoice_date', newDate);
+    setFormData('page_price', String(unitPrice));
+    setFormData('vat', String(calculateVat()));
+    setFormData('total_price', String(totalAndVatPrice()));
+    try {
+      const {
+        data: { checkoutId },
+      } = await axios.post('/user_data', formData, {
+        headers: {
+          'Content-Type':
+            'multipart/form-data; boundary=<calculated when request is sent>',
+        },
+      });
+      alert('Invoice sent successfully to your email press ok to continue');
+      window.location.replace(
+        `http://localhost:5000/checkout-redirect/${checkoutId}`
+      );
+    } catch (error) {
+      ShowToast({
+        type: 'error',
+        msg: t('anErrorOccurredPleaseTryAgainLater'),
+      });
+    }
+  };
+
+  useEffect(() => {
+    languagePrice();
+    getNextId();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [formData]);
+
   const languagePrice = () => {
     if (
-      (userData?.selectedFirstLng === 'English' &&
-        userData?.selectedSecondLng === 'Arabic') ||
-      (userData?.selectedFirstLng === 'Arabic' &&
-        userData?.selectedSecondLng === 'English')
+      (formData.get('selectedFromLanguage') === 'English' &&
+        formData.get('selectedToLanguage') === 'Arabic') ||
+      (formData.get('selectedFromLanguage') === 'Arabic' &&
+        formData.get('selectedToLanguage') === 'English')
     ) {
       setUnitPrice(80);
     } else setUnitPrice(140);
   };
 
-  useEffect(() => {
-    languagePrice();
-    console.log(userData);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userData]);
+  const getNextId = async () => {
+    const {
+      data: { invoiceId },
+    } = await axios.get('/next-invoice-id');
+
+    setInvoiceId(invoiceId);
+  };
 
   return (
     <div className="invoice-layout-and-pay-button">
@@ -62,13 +105,11 @@ const InvoiceLayout = ({ userData }: IInvoiceLayoutProps): ReactElement => {
               </span>
               <span>
                 {t('date')} :
-                <span className="header-text__description">
-                  {new Date().toLocaleDateString()}
-                </span>
+                <span className="header-text__description">{newDate}</span>
               </span>
               <span>
                 {t('invoiceNumber')} :
-                <span className="header-text__description"># 000010</span>
+                <span className="header-text__description"># {invoiceId}</span>
               </span>
             </div>
             <img src={Logo} alt="Logo" className="logo" />
@@ -92,12 +133,12 @@ const InvoiceLayout = ({ userData }: IInvoiceLayoutProps): ReactElement => {
                 </td>
               </tr>
               <tr>
-                <td>{`${userData?.selectedFirstLng} ${t('to')} ${
-                  userData?.selectedSecondLng
-                }`}</td>
-                <td>{userData?.numberOfPage}</td>
+                <td>{`${formData.get('selectedFromLanguage')} ${t(
+                  'to'
+                )} ${formData.get('selectedToLanguage')}`}</td>
+                <td>{formData.get('numberOfPage')}</td>
                 <td>{unitPrice}</td>
-                <td>{vat()}</td>
+                <td>{calculateVat()}</td>
                 <td>{totalAndVatPrice()}</td>
               </tr>
             </tbody>
@@ -105,7 +146,7 @@ const InvoiceLayout = ({ userData }: IInvoiceLayoutProps): ReactElement => {
           <div className="invoice-layout__notes">
             <span className="invoice-layout__notes-titel">{t('notes')} :</span>
             <span className="invoice-layout__notes-description">
-              {userData?.message}
+              {formData.get('message')}
             </span>
           </div>
           {/* footer */}
@@ -114,7 +155,7 @@ const InvoiceLayout = ({ userData }: IInvoiceLayoutProps): ReactElement => {
           </div>
         </div>
       </div>
-      <CustomButton type={ButtonType.solid}>
+      <CustomButton onClick={handleEmailAndPayment} type={ButtonType.solid}>
         {t('sendTheInvoiceAndProceedToPay')}
       </CustomButton>
     </div>

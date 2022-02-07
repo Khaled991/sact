@@ -4,21 +4,29 @@ import { Route, Routes } from 'react-router-dom';
 import Footer from './layout/footer/footer';
 import Header from './layout/header/Header';
 import { useTranslation } from 'react-i18next';
-import GetFreeQoute from './pages/getFreeQoute/getFreeQoute';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { ISecondaryLayout } from './models/ISecondaryLayout';
 import { rootData } from './data/root';
-import CvSearch from './pages/cvSearch/cvSearch';
-import JoinUsLayout from './pages/joinUs/joinUs';
-import ContactUs from './pages/contactUs/contactUs';
-import CustomerFeedback from './pages/customerFeedback/customerFeedback';
-import BuildCv from './pages/buildCv/buildCv';
-import Blog from './pages/blog/blog';
+import axios from 'axios';
 
 const Home = lazy(() => import('./pages/home/home'));
 const AboutUS = lazy(() => import('./pages/aboutUS/aboutUs'));
 const SecondaryLayout = lazy(
   () => import('./layout/secondaryLayout/secondaryLayout')
 );
+
+const GetFreeQuote = lazy(() => import('./pages/getFreeQoute/getFreeQuote'));
+const CvSearch = lazy(() => import('./pages/cvSearch/cvSearch'));
+const JoinUsLayout = lazy(() => import('./pages/joinUs/joinUs'));
+const ContactUs = lazy(() => import('./pages/contactUs/contactUs'));
+const CustomerFeedback = lazy(
+  () => import('./pages/customerFeedback/customerFeedback')
+);
+const BuildCv = lazy(() => import('./pages/buildCv/buildCv'));
+const Blog = lazy(() => import('./pages/blog/blog'));
+
+axios.defaults.baseURL = 'http://localhost:5000';
 
 function App() {
   const { i18n } = useTranslation();
@@ -49,7 +57,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about-us" element={<AboutUS />} />
-              <Route path="/get-a-free-qoute" element={<GetFreeQoute />} />
+              <Route path="/get-a-free-quote" element={<GetFreeQuote />} />
               <Route path="/cv-search" element={<CvSearch />} />
               <Route path="/join-us" element={<JoinUsLayout />} />
               <Route path="/contact-us" element={<ContactUs />} />
@@ -77,6 +85,7 @@ function App() {
       <Container fluid className="p-0">
         <Footer />
       </Container>
+      <ToastContainer />
     </div>
   );
 }

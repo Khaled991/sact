@@ -14,12 +14,6 @@ html {
   font-size: 62.5%; //1rem = 10px
 }
 
-// @media (max-width: 539px) {
-//   html {
-//     font-size: 53.5%; //1rem = 10px
-//   }
-// }
-
 body {
   font-family: Tajawal, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -39,4 +33,9 @@ a {
     min-height: 100vh;
     padding-top: 11.75rem;
   }
+}
+
+.rtl {
+  direction: rtl;
+  text-align: right;
 }

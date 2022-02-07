@@ -1,12 +1,21 @@
 import { t } from 'i18next';
 import './cvSearch.scss';
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import CustomButton, { ButtonType } from '../../components/Button/button';
 import { ReactComponent as Search } from '../../assets/icon/search.svg';
 import CvCard from '../../layout/cvCard/cvCard';
 import { NavLink } from 'react-router-dom';
+import { cvData } from './cvData';
 
 const CvSearch = (): ReactElement => {
+  const [searchValue, setSearchValue] = useState<string>('');
+
+  const handleSearch = ({
+    target: { value },
+  }: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(value);
+  };
+
   return (
     <div className="cv-search">
       <div className="cv-search__header">
@@ -16,10 +25,11 @@ const CvSearch = (): ReactElement => {
             name="search"
             type="text"
             className="cv-search__search-input"
+            onChange={handleSearch}
           />
-          <button className="cv-search__search-icon">
+          <div className="cv-search__search-icon">
             <Search />
-          </button>
+          </div>
         </div>
         <CustomButton type={ButtonType.solid}>
           <NavLink
@@ -30,9 +40,17 @@ const CvSearch = (): ReactElement => {
           </NavLink>
         </CustomButton>
       </div>
-      <CvCard />
-      <CvCard />
-      <CvCard />
+      {cvData
+        .filter(val =>
+          val.codeReference.toLowerCase().includes(searchValue.toLowerCase())
+        )
+        .map(({ codeReference, ...props }) => (
+          <CvCard
+            {...props}
+            codeReference={codeReference}
+            key={codeReference}
+          />
+        ))}
     </div>
   );
 };

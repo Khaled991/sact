@@ -1,5 +1,5 @@
 import { t } from 'i18next';
-import { ReactElement } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import './blogCard.scss';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -38,6 +38,7 @@ const BlogCard = ({
           </div>
         </header>
       </Link>
+
       <div className="entry-summary">
         <p>
           {t(partOfdescription)}

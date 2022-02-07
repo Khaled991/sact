@@ -9,15 +9,17 @@ export enum ButtonType {
 interface CustomButtonProps {
   children: React.ReactNode;
   type: ButtonType;
+  onClick?: () => void;
 }
 
 const CustomButton = ({
   children,
   type,
+  onClick,
   ...props
 }: CustomButtonProps): ReactElement => {
   return (
-    <button className={`btn ${type}`} {...props}>
+    <button onClick={onClick} className={`btn ${type}`} {...props}>
       {children}
     </button>
   );

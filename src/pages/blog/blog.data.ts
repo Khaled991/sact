@@ -33,4 +33,25 @@ export const blogData = [
     imgPath: 'https://sact.co/blog_pics/1056204271.jpg',
     date: 'articelDate3',
   },
+  {
+    id: 4,
+    title: 'articelTitle4',
+    description: 'articelDescription4',
+    imgPath: 'https://sact.co/blog_pics/trdos.jpg',
+    date: 'articelDate4',
+  },
+  {
+    id: 5,
+    title: 'articelTitle5',
+    description: 'articelDescription5',
+    imgPath: 'https://sact.co/blog_pics/560_stock.jpg',
+    date: 'articelDate5',
+  },
+  {
+    id: 6,
+    title: 'articelTitle6',
+    description: 'articelDescription6',
+    imgPath: 'https://sact.co/blog_pics/_46380_traductiong.jpg',
+    date: 'articelDate6',
+  },
 ];

@@ -102,8 +102,7 @@ header {
         }
       }
       .dropdown-item {
-        text-transform: capitalize;
-        color: #000;
+        text-transform: uppercase;
         a:link,
         a:visited {
           color: inherit;
@@ -111,6 +110,11 @@ header {
         &:hover {
           background-color: rgba(0, 0, 0, 0);
           color: $color-primary;
+        }
+        .active {
+          //TODO:remove !important and fix the problem
+          color: $color-primary !important;
+          font-weight: bold;
         }
       }
       #nav-dropside {

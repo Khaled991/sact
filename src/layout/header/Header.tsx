@@ -3,10 +3,11 @@ import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import Logo from '../../assets/img/logo.png';
 import Banner from '../../components/banner/banner';
 import { t } from 'i18next';
-import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { ReactComponent as DownArrow } from '../../assets/icon/down-arrow.svg';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
+import NavDropdownItem from '../../components/navDropdownItem/navDropdownItem';
 
 interface IHeaderProps {
   changeLanguage: () => void;
@@ -18,20 +19,15 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
   const [activeLink, setActiveLink] = useState<string>('/');
 
   useEffect(() => {
-    document.addEventListener('scroll', function (e) {
+    document.addEventListener('scroll', function () {
       setCurrentScrollPosition(window.scrollY);
     });
-    // dropDownItemsDirection();
   }, []);
 
   const handleDropSideDiraction = {
     transform: i18n.language === 'en' ? `rotate(270deg)` : `rotate(90deg)`,
   };
   const dropDownDirection = i18n.language === 'en' ? 'end' : 'start';
-  // const dropDownItemsDirection = () => {
-  //   document.querySelector('NavDropdown.Item')!.style.direction =
-  //     i18n.language === 'en' ? 'ltr' : 'rtl';
-  // };
 
   return (
     <header>
@@ -51,108 +47,171 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
         <Container>
           <Navbar.Brand href="#home">
             <Link to="/">
-              <img src={Logo} alt="Logo" className="logo" />
+              <motion.img
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 1.2 }}
+                src={Logo}
+                alt="Logo"
+                className="logo"
+              />
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <NavLink
-                to="/"
-                className={activeLink === '/' ? ' selected' : ''}
-                onClick={() => setActiveLink('/')}
-              >
-                {t('home')}
-              </NavLink>
-
-              <NavDropdown
-                title={
-                  <>
-                    {t('services')}
-                    <DownArrow className="down-arrow" />
-                  </>
-                }
-                id="basic-nav-dropdown"
-              >
+            <motion.div
+              initial={{ y: -200 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1.2 }}
+            >
+              <Nav className="me-auto">
+                <NavDropdownItem
+                  to="/"
+                  active={activeLink === '/'}
+                  onClick={() => setActiveLink('/')}
+                >
+                  {t('home')}
+                </NavDropdownItem>
                 <NavDropdown
-                  drop={dropDownDirection}
                   title={
                     <>
-                      {t('servicesLanguages')}
-                      <DownArrow
-                        className="right-arrow"
-                        style={handleDropSideDiraction}
-                      />
+                      {t('services')}
+                      <DownArrow className="down-arrow" />
                     </>
                   }
-                  id="nav-dropside"
+                  id="basic-nav-dropdown"
                 >
-                  <NavDropdown.Item>
-                    <NavLink
+                  <NavDropdown
+                    drop={dropDownDirection}
+                    title={
+                      <>
+                        {t('servicesLanguages')}
+                        <DownArrow
+                          className="right-arrow"
+                          style={handleDropSideDiraction}
+                        />
+                      </>
+                    }
+                    id="nav-dropside"
+                  >
+                    <NavDropdownItem
                       to="/english-language"
-                      className={
-                        activeLink === '/english-language' ? ' selected' : ''
-                      }
+                      active={activeLink === '/english-language'}
                       onClick={() => setActiveLink('/english-language')}
                     >
                       {t('English')}
-                    </NavLink>
-                  </NavDropdown.Item>
-                  <NavDropdown
-                    drop={dropDownDirection}
-                    title={
-                      <>
-                        {t('majorlanguages')}
-                        <DownArrow
-                          className="right-arrow"
-                          style={handleDropSideDiraction}
-                        />
-                      </>
-                    }
-                    id="nav-dropside"
-                  >
-                    <NavDropdown.Item>
-                      <NavLink
+                    </NavDropdownItem>
+                    <NavDropdown
+                      drop={dropDownDirection}
+                      title={
+                        <>
+                          {t('majorlanguages')}
+                          <DownArrow
+                            className="right-arrow"
+                            style={handleDropSideDiraction}
+                          />
+                        </>
+                      }
+                      id="nav-dropside"
+                    >
+                      <NavDropdownItem
                         to="/French"
-                        className={activeLink === '/French' ? ' selected' : ''}
+                        active={activeLink === '/French'}
                         onClick={() => setActiveLink('/French')}
                       >
                         {t('French')}
-                      </NavLink>
-                    </NavDropdown.Item>
-                    <NavDropdown.Item>
-                      <NavLink
+                      </NavDropdownItem>
+                      <NavDropdownItem
                         to="/German"
-                        className={activeLink === '/German' ? ' selected' : ''}
+                        active={activeLink === '/German'}
                         onClick={() => setActiveLink('/German')}
                       >
                         {t('German')}
-                      </NavLink>
-                    </NavDropdown.Item>
-                    <NavDropdown.Item>
-                      <NavLink
+                      </NavDropdownItem>
+                      <NavDropdownItem
                         to="/Russian"
-                        className={activeLink === '/Russian' ? ' selected' : ''}
+                        active={activeLink === '/Russian'}
                         onClick={() => setActiveLink('/Russian')}
                       >
                         {t('Russian')}
-                      </NavLink>
-                    </NavDropdown.Item>
-                    <NavDropdown.Item>
-                      <NavLink
+                      </NavDropdownItem>
+                      <NavDropdownItem
                         to="/Turkish"
-                        className={activeLink === '/Turkish' ? ' selected' : ''}
+                        active={activeLink === '/Turkish'}
                         onClick={() => setActiveLink('/Turkish')}
                       >
                         {t('Turkish')}
-                      </NavLink>
-                    </NavDropdown.Item>
+                      </NavDropdownItem>
+                    </NavDropdown>
+                    <NavDropdown
+                      drop={dropDownDirection}
+                      title={
+                        <>
+                          {t('otherLanguages')}
+                          <DownArrow
+                            className="right-arrow"
+                            style={handleDropSideDiraction}
+                          />
+                        </>
+                      }
+                      id="nav-dropside"
+                    >
+                      <NavDropdownItem
+                        to="/Chinese"
+                        active={activeLink === '/Chinese'}
+                        onClick={() => setActiveLink('/Chinese')}
+                      >
+                        {t('Chinese')}
+                      </NavDropdownItem>
+                      <NavDropdownItem
+                        to="/Italian"
+                        active={activeLink === '/Italian'}
+                        onClick={() => setActiveLink('/Italian')}
+                      >
+                        {t('Italian')}
+                      </NavDropdownItem>
+                      <NavDropdownItem
+                        to="/Spanish"
+                        active={activeLink === '/Spanish'}
+                        onClick={() => setActiveLink('/Spanish')}
+                      >
+                        {t('Spanish')}
+                      </NavDropdownItem>
+                      <NavDropdownItem
+                        to="/Swedish"
+                        active={activeLink === '/Swedish'}
+                        onClick={() => setActiveLink('/Swedish')}
+                      >
+                        {t('swedishLanguageTitleData')}
+                      </NavDropdownItem>
+                      <NavDropdownItem
+                        to="/Ukrainian"
+                        active={activeLink === '/Ukrainian'}
+                        onClick={() => setActiveLink('/Ukrainian')}
+                      >
+                        {t('ukrainianLanguageTitleData')}
+                      </NavDropdownItem>
+                      <NavDropdownItem
+                        to="/Bulgarian"
+                        active={activeLink === '/Bulgarian'}
+                        onClick={() => setActiveLink('/Bulgarian')}
+                      >
+                        {t('bulgarianLanguageTitleData')}
+                      </NavDropdownItem>
+                      <NavDropdownItem
+                        to="/Portuguese"
+                        active={activeLink === '/Portuguese'}
+                        onClick={() => setActiveLink('/Portuguese')}
+                      >
+                        {t('portugueseLanguageTitleData')}
+                      </NavDropdownItem>
+                    </NavDropdown>
                   </NavDropdown>
                   <NavDropdown
                     drop={dropDownDirection}
                     title={
                       <>
-                        {t('otherLanguages')}
+                        {t('servicesTranslation')}
                         <DownArrow
                           className="right-arrow"
                           style={handleDropSideDiraction}
@@ -161,162 +220,50 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                     }
                     id="nav-dropside"
                   >
-                    <NavDropdown.Item>
-                      <NavLink
-                        to="/Chinese"
-                        className={activeLink === '/Chinese' ? ' selected' : ''}
-                        onClick={() => setActiveLink('/Chinese')}
-                      >
-                        {t('Chinese')}
-                      </NavLink>
-                    </NavDropdown.Item>
-                    <NavDropdown.Item>
-                      <NavLink
-                        to="/Italian"
-                        className={activeLink === '/Italian' ? ' selected' : ''}
-                        onClick={() => setActiveLink('/Italian')}
-                      >
-                        {t('Italian')}
-                      </NavLink>
-                    </NavDropdown.Item>
-                    <NavDropdown.Item>
-                      <NavLink
-                        to="/Spanish"
-                        className={activeLink === '/Spanish' ? ' selected' : ''}
-                        onClick={() => setActiveLink('/Spanish')}
-                      >
-                        {t('Spanish')}
-                      </NavLink>
-                    </NavDropdown.Item>
-                    <NavDropdown.Item>
-                      <NavLink
-                        to="/Swedish"
-                        className={activeLink === '/Swedish' ? ' selected' : ''}
-                        onClick={() => setActiveLink('/Swedish')}
-                      >
-                        {t('swedishLanguageTitleData')}
-                      </NavLink>
-                    </NavDropdown.Item>
-                    <NavDropdown.Item>
-                      <NavLink
-                        to="/Ukrainian"
-                        className={
-                          activeLink === '/Ukrainian' ? ' selected' : ''
-                        }
-                        onClick={() => setActiveLink('/Ukrainian')}
-                      >
-                        {t('ukrainianLanguageTitleData')}
-                      </NavLink>
-                    </NavDropdown.Item>
-                    <NavDropdown.Item>
-                      <NavLink
-                        to="/Bulgarian"
-                        className={
-                          activeLink === '/Bulgarian' ? ' selected' : ''
-                        }
-                        onClick={() => setActiveLink('/Bulgarian')}
-                      >
-                        {t('bulgarianLanguageTitleData')}
-                      </NavLink>
-                    </NavDropdown.Item>
-                    <NavDropdown.Item>
-                      <NavLink
-                        to="/Portuguese"
-                        className={
-                          activeLink === '/Portuguese' ? ' selected' : ''
-                        }
-                        onClick={() => setActiveLink('/Portuguese')}
-                      >
-                        {t('portugueseLanguageTitleData')}
-                      </NavLink>
-                    </NavDropdown.Item>
-                  </NavDropdown>
-                </NavDropdown>
-
-                <NavDropdown
-                  drop={dropDownDirection}
-                  title={
-                    <>
-                      {t('servicesTranslation')}
-                      <DownArrow
-                        className="right-arrow"
-                        style={handleDropSideDiraction}
-                      />
-                    </>
-                  }
-                  id="nav-dropside"
-                >
-                  <NavDropdown.Item>
-                    <NavLink
+                    <NavDropdownItem
                       to="/legal-translation"
-                      className={
-                        activeLink === '/legal-translation' ? ' selected' : ''
-                      }
+                      active={activeLink === '/legal-translation'}
                       onClick={() => setActiveLink('/legal-translation')}
                     >
                       {t('legalTranslationTitleData')}
-                    </NavLink>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <NavLink
+                    </NavDropdownItem>
+                    <NavDropdownItem
                       to="/literary-translation-and-humanities"
-                      className={
+                      active={
                         activeLink === '/literary-translation-and-humanities'
-                          ? ' selected'
-                          : ''
                       }
                       onClick={() =>
                         setActiveLink('/literary-translation-and-humanities')
                       }
                     >
                       {t('literaryTranslationAndHumanitiesTitleData')}
-                    </NavLink>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <NavLink
+                    </NavDropdownItem>
+                    <NavDropdownItem
                       to="/military-translation"
-                      className={
-                        activeLink === '/military-translation'
-                          ? ' selected'
-                          : ''
-                      }
+                      active={activeLink === '/military-translation'}
                       onClick={() => setActiveLink('/military-translation')}
                     >
                       {t('militaryTranslationTitleData')}
-                    </NavLink>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <NavLink
+                    </NavDropdownItem>
+                    <NavDropdownItem
                       to="/medical-translation"
-                      className={
-                        activeLink === '/medical-translation' ? ' selected' : ''
-                      }
+                      active={activeLink === '/medical-translation'}
                       onClick={() => setActiveLink('/medical-translation')}
                     >
                       {t('medicalTranslationTitleData')}
-                    </NavLink>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <NavLink
+                    </NavDropdownItem>
+                    <NavDropdownItem
                       to="/religious-translation"
-                      className={
-                        activeLink === '/religious-translation'
-                          ? ' selected'
-                          : ''
-                      }
+                      active={activeLink === '/religious-translation'}
                       onClick={() => setActiveLink('/religious-translation')}
                     >
                       {t('religiousTranslationTitleData')}
-                    </NavLink>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <NavLink
+                    </NavDropdownItem>
+                    <NavDropdownItem
                       to="/leisure,-tourism-and-hospitality-translation"
-                      className={
+                      active={
                         activeLink ===
                         '/leisure,-tourism-and-hospitality-translation'
-                          ? ' selected'
-                          : ''
                       }
                       onClick={() =>
                         setActiveLink(
@@ -325,203 +272,149 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                       }
                     >
                       {t('leisureTourismAndHospitalityTranslationTitleData')}
-                    </NavLink>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <NavLink
+                    </NavDropdownItem>
+                    <NavDropdownItem
                       to="/economic-and-financial-translation"
-                      className={
+                      active={
                         activeLink === '/economic-and-financial-translation'
-                          ? ' selected'
-                          : ''
                       }
                       onClick={() =>
                         setActiveLink('/economic-and-financial-translation')
                       }
                     >
                       {t('economicAndFinancialTranslationTitleData')}
-                    </NavLink>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <NavLink
+                    </NavDropdownItem>
+                    <NavDropdownItem
                       to="/general-translation"
-                      className={
-                        activeLink === '/general-translation' ? ' selected' : ''
-                      }
+                      active={activeLink === '/general-translation'}
                       onClick={() => setActiveLink('/general-translation')}
                     >
                       {t('generalTranslationTitleData')}
-                    </NavLink>
-                  </NavDropdown.Item>
-                </NavDropdown>
-
-                <NavDropdown
-                  drop={dropDownDirection}
-                  title={
-                    <>
-                      {t('servicesInterpretation')}
-                      <DownArrow
-                        className="right-arrow"
-                        style={handleDropSideDiraction}
-                      />
-                    </>
-                  }
-                  id="nav-dropside"
-                >
-                  <NavDropdown.Item>
-                    <NavLink
+                    </NavDropdownItem>
+                  </NavDropdown>
+                  <NavDropdown
+                    drop={dropDownDirection}
+                    title={
+                      <>
+                        {t('servicesInterpretation')}
+                        <DownArrow
+                          className="right-arrow"
+                          style={handleDropSideDiraction}
+                        />
+                      </>
+                    }
+                    id="nav-dropside"
+                  >
+                    <NavDropdownItem
                       to="/simultaneous-interpretation"
-                      className={
-                        activeLink === '/simultaneous-interpretation'
-                          ? ' selected'
-                          : ''
-                      }
+                      active={activeLink === '/simultaneous-interpretation'}
                       onClick={() =>
                         setActiveLink('/simultaneous-interpretation')
                       }
                     >
                       {t('simultaneousInterpretationTitleData')}
-                    </NavLink>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <NavLink
+                    </NavDropdownItem>
+                    <NavDropdownItem
                       to="/consecutive-interpretation"
-                      className={
-                        activeLink === '/consecutive-interpretation'
-                          ? ' selected'
-                          : ''
-                      }
+                      active={activeLink === '/consecutive-interpretation'}
                       onClick={() =>
                         setActiveLink('/consecutive-interpretation')
                       }
                     >
                       {t('consecutiveInterpretationTitleData')}
-                    </NavLink>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <NavLink
+                    </NavDropdownItem>
+                    <NavDropdownItem
                       to="/whispered-interpreting"
-                      className={
-                        activeLink === '/whispered-interpreting'
-                          ? ' selected'
-                          : ''
-                      }
+                      active={activeLink === '/whispered-interpreting'}
                       onClick={() => setActiveLink('/whispered-interpreting')}
                     >
                       {t('whisperedInterpretingTitleData')}
-                    </NavLink>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <NavLink
+                    </NavDropdownItem>
+                    <NavDropdownItem
                       to="/event-and-conference-equipment-supply"
-                      className={
+                      active={
                         activeLink === '/event-and-conference-equipment-supply'
-                          ? ' selected'
-                          : ''
                       }
                       onClick={() =>
                         setActiveLink('/event-and-conference-equipment-supply')
                       }
                     >
                       {t('eventAndConferenceEquipmentSupplyTitleData')}
-                    </NavLink>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item>
-                    <NavLink
+                    </NavDropdownItem>
+                    <NavDropdownItem
                       to="/our-works"
-                      className={activeLink === '/our-works' ? ' selected' : ''}
+                      active={activeLink === '/our-works'}
                       onClick={() => setActiveLink('/our-works')}
                     >
                       {t('ourWorksTitleData')}
-                    </NavLink>
-                  </NavDropdown.Item>
+                    </NavDropdownItem>
+                  </NavDropdown>
                 </NavDropdown>
-              </NavDropdown>
-
-              <NavDropdown
-                title={
-                  <>
-                    {t('categories')}
-                    <DownArrow className="down-arrow" />
-                  </>
-                }
-                id="basic-nav-dropdown"
-              >
-                <NavDropdown.Item>
-                  <NavLink
+                <NavDropdown
+                  title={
+                    <>
+                      {t('categories')}
+                      <DownArrow className="down-arrow" />
+                    </>
+                  }
+                  id="basic-nav-dropdown"
+                >
+                  <NavDropdownItem
                     to="/desktop-publishing"
-                    className={
-                      activeLink === '/desktop-publishing' ? ' selected' : ''
-                    }
+                    active={activeLink === '/desktop-publishing'}
                     onClick={() => setActiveLink('/desktop-publishing')}
                   >
                     {t('desktopPublishingTitleData')}
-                  </NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <NavLink
+                  </NavDropdownItem>
+                  <NavDropdownItem
                     to="/proofreading-and-editing"
-                    className={
-                      activeLink === '/proofreading-and-editing'
-                        ? ' selected'
-                        : ''
-                    }
+                    active={activeLink === '/proofreading-and-editing'}
                     onClick={() => setActiveLink('/proofreading-and-editing')}
                   >
                     {t('proofreadingAndEditingTitleData')}
-                  </NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <NavLink
+                  </NavDropdownItem>
+                  <NavDropdownItem
                     to="/web-content-translation-and-localization"
-                    className={
+                    active={
                       activeLink === '/web-content-translation-and-localization'
-                        ? ' selected'
-                        : ''
                     }
                     onClick={() =>
                       setActiveLink('/web-content-translation-and-localization')
                     }
                   >
                     {t('webContentTranslationAndLocalizationTitleData')}
-                  </NavLink>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <NavLink
+                  </NavDropdownItem>
+                  <NavDropdownItem
                     to="/transcription"
-                    className={
-                      activeLink === '/transcription' ? ' selected' : ''
-                    }
+                    active={activeLink === '/transcription'}
                     onClick={() => setActiveLink('/transcription')}
                   >
                     {t('transcriptionTitleData')}
-                  </NavLink>
-                </NavDropdown.Item>
-              </NavDropdown>
-
-              <NavLink
-                to="/cv-search"
-                className={activeLink === '/cvsearch' ? ' selected' : ''}
-                onClick={() => setActiveLink('/cvsearch')}
-              >
-                {t('cvsearch')}
-              </NavLink>
-
-              <NavLink
-                to="/join-us"
-                className={activeLink === '/joinus' ? ' selected' : ''}
-                onClick={() => setActiveLink('/joinus')}
-              >
-                {t('joinus')}
-              </NavLink>
-              <NavLink
-                to="/about-us"
-                className={activeLink === '/aboutus' ? ' selected' : ''}
-                onClick={() => setActiveLink('/aboutus')}
-              >
-                {t('aboutus')}
-              </NavLink>
-            </Nav>
+                  </NavDropdownItem>
+                </NavDropdown>
+                <NavDropdownItem
+                  to="/cv-search"
+                  active={activeLink === '/cvsearch'}
+                  onClick={() => setActiveLink('/cvsearch')}
+                >
+                  {t('cvsearch')}
+                </NavDropdownItem>
+                <NavDropdownItem
+                  to="/join-us"
+                  active={activeLink === '/joinus'}
+                  onClick={() => setActiveLink('/joinus')}
+                >
+                  {t('joinus')}
+                </NavDropdownItem>
+                <NavDropdownItem
+                  to="/about-us"
+                  active={activeLink === '/aboutus'}
+                  onClick={() => setActiveLink('/aboutus')}
+                >
+                  {t('aboutus')}
+                </NavDropdownItem>
+              </Nav>
+            </motion.div>
           </Navbar.Collapse>
         </Container>
       </Navbar>

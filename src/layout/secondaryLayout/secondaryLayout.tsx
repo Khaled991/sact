@@ -16,7 +16,7 @@ const SecondaryLayout = ({
   return (
     <div className="secondary-layout">
       <div className="secondary-layout__primary-title">
-        <Typography type={TypographyType.primary} color="#f1923d">
+        <Typography type={TypographyType.secondary} color="#f1923d">
           {t(primaryTitle)}
         </Typography>
       </div>
