@@ -1,7 +1,7 @@
-import { t } from 'i18next';
-import { ReactElement, useEffect, useState } from 'react';
+import { ReactElement } from 'react';
 import './blogCard.scss';
 import { NavLink, useLocation } from 'react-router-dom';
+import { t } from 'i18next';
 
 interface IBlogCard {
   id: number;
