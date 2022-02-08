@@ -1,7 +1,6 @@
 import { ReactElement } from 'react';
 import './aboutUs.scss';
 import AboutUsImage from '../../assets/img/about-us-image.svg';
-
 import { AboutUsData } from './aboutUsData';
 import SecondaryLayout from '../../layout/secondaryLayout/secondaryLayout';
 
@@ -9,6 +8,8 @@ const AboutUs = (): ReactElement => {
   return (
     <div className="about-us">
       <img
+        width="600"
+        height="400"
         src={AboutUsImage}
         alt="AboutUsImage"
         className="about-us__about-us-image"

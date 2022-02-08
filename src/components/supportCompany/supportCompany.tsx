@@ -23,6 +23,7 @@ const SupportCompany = (): ReactElement => {
           <img
             src={imgPath}
             alt={`SupportCompanys ${i + 1}`}
+            width="auto"
             height="50px"
             key={i}
           />

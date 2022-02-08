@@ -38,7 +38,13 @@ const Layout = ({
       <div className="layout__tertiary-text">
         <Typography type={TypographyType.tertiary}>{secondaryTitle}</Typography>
       </div>
-      <img src={imgPath} alt="pageImage" className="layout__back-background" />
+      <img
+        width="100%"
+        height="auto"
+        src={imgPath}
+        alt="pageImage"
+        className="layout__back-background"
+      />
       <div className="layout__layout-content">{children}</div>
     </div>
   );

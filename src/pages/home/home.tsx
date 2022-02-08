@@ -32,10 +32,6 @@ const Home = (): ReactElement => {
             {t('getAFreeQuote')}
           </CustomButton>
         </NavLink>
-        {/* <CustomButton type={ButtonType.textButton}>
-          {t('getAProQuote')}
-          <img src={LeftArrwo} alt="LeftArrwo" className="left-arrow" />
-        </CustomButton> */}
       </HomePagesLayout>
       {/* ---------------------------------home page 2-------------------------------------------- */}
       <TertiaryLayout

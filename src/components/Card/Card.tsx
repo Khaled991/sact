@@ -16,6 +16,8 @@ const Card = ({ symbol, title, description }: ICardProps): ReactElement => {
         src={symbol}
         alt="card-icon"
         className="feature-box__icon card-icon"
+        width="600"
+        height="400"
       />
       <h3 className="feature-box__card-title">{t(title)}</h3>
       {description && (

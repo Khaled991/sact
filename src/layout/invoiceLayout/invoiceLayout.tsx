@@ -112,7 +112,13 @@ const InvoiceLayout = ({
                 <span className="header-text__description"># {invoiceId}</span>
               </span>
             </div>
-            <img src={Logo} alt="Logo" className="logo" />
+            <img
+              src={Logo}
+              alt="Logo"
+              className="logo"
+              width="200px"
+              height="auto"
+            />
           </div>
           {/* body */}
           <table className="table">

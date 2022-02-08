@@ -34,7 +34,7 @@ const BlogCard = ({
             </span>
           </div>
           <div className="entry-thumbnail">
-            <img src={imgPath} alt="ArticleImage" />
+            <img src={imgPath} width="600" height="400" alt="ArticleImage" />
           </div>
         </header>
       </NavLink>

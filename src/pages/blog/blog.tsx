@@ -33,7 +33,13 @@ const Blog = (): ReactElement => {
       <div className="side-widget">
         <div className="side-widget__header">
           <h4 className="side-widget__title">{t('aboutus')}</h4>
-          <img src={Logo} alt="logo" className="side-widget__img" />
+          <img
+            width="600"
+            height="400"
+            src={Logo}
+            alt="logo"
+            className="side-widget__img"
+          />
           {t('salehAlOmarCertifiedTranslation')}
         </div>
 

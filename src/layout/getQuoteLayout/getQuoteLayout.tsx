@@ -151,7 +151,7 @@ const GetQuoteLayout = ({
         <div className="box-footer">
           <CustomButton type={ButtonType.solid}>{t('getAQuote')}</CustomButton>
           <div className="hyperpay-payment-icon">
-            <img src={Hyperpay} alt="payment" width="100%" />
+            <img src={Hyperpay} alt="payment" width="100%" height="auto" />
           </div>
         </div>
       </form>

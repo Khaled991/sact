@@ -51,16 +51,22 @@ const TertiaryLayout = ({
           <Col md={6} className="section-about__scaleabl-three-images">
             <div className="composition">
               <img
+                width="600"
+                height="400"
                 src={imgPath}
                 alt="tgeerd_lyout_image"
                 className="composition__photo composition__photo--p1"
               />
               <img
+                width="600"
+                height="400"
                 src={imgPath1}
                 alt="tgeerd_lyout_image"
                 className="composition__photo composition__photo--p2"
               />
               <img
+                width="600"
+                height="400"
                 src={imgPath2}
                 alt="tgeerd_lyout_image"
                 className="composition__photo composition__photo--p3"
