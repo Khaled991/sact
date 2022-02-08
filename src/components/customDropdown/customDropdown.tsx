@@ -40,7 +40,6 @@ const CustomDropdown = ({
                 setSelected(opinion);
                 setSelectedLocal(opinion);
                 setIsComponentVisible(false);
-                // setIsActive(false);
               }}
               className="custom-ropdown-item"
             >

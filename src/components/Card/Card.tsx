@@ -1,4 +1,3 @@
-// import { t } from 'i18next';
 import { t } from 'i18next';
 import { ReactElement } from 'react';
 import './card.scss';

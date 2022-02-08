@@ -22,5 +22,3 @@ const ShowToast = ({ msg, type, time = 5000 }: IShowToast) => {
   });
 };
 export default ShowToast;
-
-// ShowToast({ type: 'error', msg: '' });

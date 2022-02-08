@@ -103,8 +103,7 @@ header {
       }
       .dropdown-item {
         text-transform: uppercase;
-        a:link,
-        a:visited {
+        a {
           color: inherit;
         }
         &:hover {
@@ -112,8 +111,7 @@ header {
           color: $color-primary;
         }
         .active {
-          //TODO:remove !important and fix the problem
-          color: $color-primary !important;
+          color: $color-primary;
           font-weight: bold;
         }
       }
@@ -156,106 +154,4 @@ header {
       transform: scale(1);
     }
   }
-
-  // .header-content {
-  //   display: flex;
-  //   align-items: center;
-  //   padding: 0.5rem;
-  //   position: relative;
-
-  //   .logo {
-  //     height: 6.4rem;
-  //     cursor: pointer;
-  //     transition: all 0.2s;
-  //   }
-
-  //   ul {
-  //     display: flex;
-  //     list-style-type: none;
-  //     padding: 0 2rem;
-  //     margin: 0;
-  //     .multi-nav-link {
-  //       display: flex;
-  //       align-items: center;
-  //       .down-arrow {
-  //         width: 0.7rem;
-  //         height: 0.7rem;
-  //         margin-left: 0.6rem;
-  //         stroke: $color-grey-dark-1;
-  //         transition: all 0.2s;
-  //       }
-  //     }
-
-  //     & > * {
-  //       color: $color-grey-dark-1;
-  //       text-transform: uppercase;
-  //       padding: 0 1rem;
-  //       cursor: pointer;
-  //       transition: all 0.2s;
-  //       font-size: 1.6rem;
-  //       white-space: nowrap;
-
-  //       &:hover {
-  //         transform: translateY(-0.3rem);
-  //         color: $color-primary;
-  //         .down-arrow {
-  //           stroke: $color-primary;
-  //           animation: downArrow 0.8s linear infinite;
-  //         }
-  //       }
-  //       &:active {
-  //         transform: translateY(0.1rem);
-  //         color: $color-primary;
-  //       }
-  //       &.selected {
-  //         color: $color-primary;
-  //         font-weight: bold;
-  //       }
-  //     }
-  //   }
-
-  //   @media (max-width: 767px) {
-  //     & {
-  //       justify-content: space-between;
-  //       position: relative;
-  //       .humberger {
-  //         &__slice {
-  //           background-color: $color-primary;
-  //           height: 4px;
-  //           width: 35px;
-  //           margin: 6px 0;
-  //           border-radius: 2.5px;
-  //         }
-  //       }
-  //       ul {
-  //         margin-top: 1rem;
-  //         flex-direction: column;
-  //         position: absolute;
-  //         right: 0;
-  //         background-color: #fff;
-  //         padding: 15px 10px;
-  //         border-radius: 1rem;
-  //         border: $color-primary 1px solid;
-  //         opacity: 1;
-  //         transition: opacity 0.5s;
-
-  //         &.hide {
-  //           display: none;
-  //           opacity: 0;
-  //         }
-
-  //         & > * {
-  //           font-size: 2rem;
-
-  //           &:hover {
-  //             transform: translateY(0rem);
-  //           }
-  //           &:active {
-  //             transform: translateY(0rem);
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
 }

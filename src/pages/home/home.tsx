@@ -1,5 +1,4 @@
 import { ReactElement } from 'react';
-// import LeftArrwo from '../../assets/icon/left-arrow.svg';
 import CustomButton, { ButtonType } from '../../components/Button/button';
 import { Row, Container } from 'react-bootstrap';
 import { t } from 'i18next';
@@ -41,9 +40,9 @@ const Home = (): ReactElement => {
                       Voluptates amet suscipit, veritatis, corrupti quidem adipisci
                       fugiat consequuntur maxime eius soluta repellendus, dolorum ipsum
                       incidunt tempore odit voluptatum dolorem! Debitis, consectetur!"
-        imgPath="https://consumer-img.huawei.com/content/dam/huawei-cbg-site/en/mkt/press/news/2021/huawei-next-image-awards-2021/img01.jpg"
-        imgPath1="https://consumer-img.huawei.com/content/dam/huawei-cbg-site/en/mkt/press/news/2021/huawei-next-image-awards-2021/img01.jpg"
-        imgPath2="https://consumer-img.huawei.com/content/dam/huawei-cbg-site/en/mkt/press/news/2021/huawei-next-image-awards-2021/img01.jpg"
+        imgPath="https://www.gstatic.com/webp/gallery/1.webp"
+        imgPath1="https://www.gstatic.com/webp/gallery/4.webp"
+        imgPath2="https://www.gstatic.com/webp/gallery/5.webp"
       />
       {/* ---------------------------------home page 3-------------------------------------------- */}
 

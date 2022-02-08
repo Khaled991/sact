@@ -101,12 +101,6 @@ const CvCard = ({
           <span className="details-contet">{expectedSalary}</span>
         </span>
       </div>
-
-      {/* <div className="skills">
-        <span>
-          {t('skills')} : <span className="details-contet"></span>
-        </span>
-      </div> */}
       <div className="date-and-code">
         <span>
           {t('dateOfPublication')} :{' '}

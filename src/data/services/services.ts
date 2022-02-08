@@ -1,5 +1,4 @@
 import { ISecondaryLayout } from '../../models/ISecondaryLayout';
-///////////////////////////////////////////////////
 //Languages
 export const englishLanguage: ISecondaryLayout = {
   path: '/english-language',
@@ -67,7 +66,6 @@ export const Portuguese: ISecondaryLayout = {
   description: 'portugueseLanguageDescriptionData',
 };
 
-///////////////////////////////////////////////////
 //Translation
 export const legalTranslation: ISecondaryLayout = {
   path: '/legal-translation',
@@ -110,7 +108,6 @@ export const generalTranslation: ISecondaryLayout = {
   description: 'generalTranslationDescriptionData',
 };
 
-///////////////////////////////////////////////////
 //Interpretation
 export const simultaneousInterpretation: ISecondaryLayout = {
   path: '/simultaneous-interpretation',

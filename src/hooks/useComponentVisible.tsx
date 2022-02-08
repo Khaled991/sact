@@ -17,18 +17,12 @@ export default function useComponentVisible(initialIsVisible: boolean) {
     } else setIsComponentVisible(true);
   };
 
-  // const handleMouseUp = (event: Event) => {
-  //   if (isComponentVisible) setIsComponentVisible(false);
-  // };
-
   useEffect(() => {
     document.addEventListener('keydown', handleHideDropdown, true);
     document.addEventListener('mouseup', handleClickOutside, true);
-    // document.addEventListener('mouseup', handleMouseUp, true);
     return () => {
       document.removeEventListener('keydown', handleHideDropdown, true);
       document.removeEventListener('mouseup', handleClickOutside, true);
-      // document.removeEventListener('mouseup', handleClickOutside, true);
     };
   });
 
