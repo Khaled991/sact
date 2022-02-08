@@ -54,6 +54,8 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                 src={Logo}
                 alt="Logo"
                 className="logo"
+                width="600"
+                height="400"
               />
             </NavLink>
           </Navbar.Brand>
