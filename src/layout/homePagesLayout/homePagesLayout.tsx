@@ -4,8 +4,8 @@ import Typography, {
   TypographyType,
 } from '../../components/typography/typography';
 import './homePagesLayout.scss';
-import homePageImage from '../../assets/img/image-part-1.svg';
 import SupportCompany from '../../components/supportCompany/supportCompany';
+import HomePageImage from '../../components/homePageImage/homePageImage';
 
 interface HomePagesLayoutProps {
   children: any;
@@ -38,11 +38,7 @@ const HomePagesLayout = ({
         </div>
       </Col>
       <Col md={6}>
-        <img
-          src={homePageImage}
-          alt="homePageImage"
-          className="home-page__image"
-        />
+        <HomePageImage />
       </Col>
       <SupportCompany />
     </>

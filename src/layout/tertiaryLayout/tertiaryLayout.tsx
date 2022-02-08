@@ -42,13 +42,13 @@ const TertiaryLayout = ({
       </div>
       <section className="section-about">
         <Row>
-          <Col>
+          <Col md={6} className="section-about__description">
             <h3 className="heading-tertiary">{titleHeadingTertiary}</h3>
             <Typography type={TypographyType.tertiary}>
               {description}
             </Typography>
           </Col>
-          <Col>
+          <Col md={6} className="section-about__scaleabl-three-images">
             <div className="composition">
               <img
                 src={imgPath}

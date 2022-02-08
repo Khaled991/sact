@@ -1,7 +1,7 @@
 import { t } from 'i18next';
 import { ReactElement, useEffect, useState } from 'react';
 import './blogCard.scss';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 interface IBlogCard {
   id: number;
@@ -25,7 +25,7 @@ const BlogCard = ({
 
   return (
     <article>
-      <Link to={`${pathname}/${id}`} rel="bookmark">
+      <NavLink to={`${pathname}/${id}`} rel="bookmark">
         <header className="entry-header">
           <h1 className="entry-header__title">{t(title)}</h1>
           <div className="entry-meta">
@@ -37,14 +37,14 @@ const BlogCard = ({
             <img src={imgPath} alt="" />
           </div>
         </header>
-      </Link>
+      </NavLink>
 
       <div className="entry-summary">
         <p>
           {t(partOfdescription)}
-          <Link to={`${pathname}/${id}`} className="more-link">
+          <NavLink to={`${pathname}/${id}`} className="more-link">
             {t('readMore')}
-          </Link>
+          </NavLink>
         </p>
       </div>
     </article>

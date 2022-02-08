@@ -63,14 +63,18 @@ const ContactUs = (): ReactElement => {
               <td className="week-days">{t('saturday')}</td>
               <td>11:00 AM - 05:00 PM</td>
             </tr>
-            <td className="week-days">{t('sunday')}</td>
-            <td>08:30 AM - 09:00 PM</td>
+            <tr>
+              <td className="week-days">{t('sunday')}</td>
+              <td>08:30 AM - 09:00 PM</td>
+            </tr>
             <tr>
               <td className="week-days">{t('monday')}</td>
               <td>08:30 AM - 09:00 PM</td>
             </tr>
-            <td className="week-days">{t('tuesday')}</td>
-            <td>08:30 AM - 09:00 PM</td>
+            <tr>
+              <td className="week-days">{t('tuesday')}</td>
+              <td>08:30 AM - 09:00 PM</td>
+            </tr>
             <tr>
               <td className="week-days">{t('wednesday')}</td>
               <td>08:30 AM - 09:00 PM</td>

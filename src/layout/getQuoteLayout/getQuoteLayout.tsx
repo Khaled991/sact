@@ -5,7 +5,7 @@ import CustomInput, {
 } from '../../components/customInput/customInput';
 import { Row, Col } from 'react-bootstrap';
 import CustomButton, { ButtonType } from '../../components/Button/button';
-import Hyperpay from '../../assets/img/hyperpay.jpg';
+import Hyperpay from '../../assets/img/hyperpay.webp';
 import CustomDropdown from '../../components/customDropdown/customDropdown';
 import { t } from 'i18next';
 import ShowToast from '../../components/Toast/Toast';

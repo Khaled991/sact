@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Footer from './layout/footer/footer';
 import Header from './layout/header/Header';
 import { useTranslation } from 'react-i18next';
@@ -30,6 +30,7 @@ axios.defaults.baseURL = 'http://localhost:5000';
 
 function App() {
   const { i18n } = useTranslation();
+  const { pathname } = useLocation();
 
   const changeLanguage = () => {
     const newLanguage =
@@ -37,6 +38,10 @@ function App() {
     i18n.changeLanguage(newLanguage);
     handleHtmlDiraction();
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   useEffect(() => {
     handleHtmlDiraction();

@@ -24,14 +24,14 @@ const Home = (): ReactElement => {
         secondaryText={t('acrosscultures')}
         tertiaryText={t('homedescription')}
       >
-        <CustomButton type={ButtonType.solid}>
-          <NavLink
-            to="/get-a-free-quote"
-            style={{ textDecoration: 'none', color: '#fff' }}
-          >
+        <NavLink
+          to="/get-a-free-quote"
+          style={{ textDecoration: 'none', color: '#fff' }}
+        >
+          <CustomButton type={ButtonType.solid}>
             {t('getAFreeQuote')}
-          </NavLink>
-        </CustomButton>
+          </CustomButton>
+        </NavLink>
         {/* <CustomButton type={ButtonType.textButton}>
           {t('getAProQuote')}
           <img src={LeftArrwo} alt="LeftArrwo" className="left-arrow" />

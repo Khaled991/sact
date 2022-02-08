@@ -1,11 +1,12 @@
 import { ReactElement } from 'react';
 import './footer.scss';
-import SupportCompanys from '../../assets/img/company.png';
+import SupportCompanys from '../../assets/img/company.webp';
 import { socilMediaData } from './footerData';
 import { ReactComponent as Call } from '../../assets/icon/call.svg';
 import { ReactComponent as Location } from '../../assets/icon/location.svg';
 import { Row, Col } from 'react-bootstrap';
 import { t } from 'i18next';
+import { NavLink } from 'react-router-dom';
 
 const Footer = (): ReactElement => {
   return (
@@ -35,12 +36,12 @@ const Footer = (): ReactElement => {
           <Col xs={12} md={4} className="footer__cols">
             <div>
               <span className="footer__title">{t('services')}</span>
-              <a href="/confidentiality" className="footer__description">
+              <NavLink to="/confidentiality" className="footer__description">
                 {t('confidentiality')}
-              </a>
-              <a href="/cookiesPolicy" className="footer__description">
+              </NavLink>
+              <NavLink to="/cookiesPolicy" className="footer__description">
                 {t('cookiesPolicy')}
-              </a>
+              </NavLink>
               <a href="sda" className="footer__description">
                 {t('houseOfTransaltor')}
               </a>
@@ -49,12 +50,12 @@ const Footer = (): ReactElement => {
           <Col xs={12} md={4} className="footer__cols">
             <div>
               <span className="footer__title">{t('customerSupport')}</span>
-              <a href="/customer-feedback" className="footer__description">
+              <NavLink to="/customer-feedback" className="footer__description">
                 {t('customerFeedback')}
-              </a>
-              <a href="/contact-us" className="footer__description">
+              </NavLink>
+              <NavLink to="/contact-us" className="footer__description">
                 {t('contactUs')}
-              </a>
+              </NavLink>
             </div>
           </Col>
         </Row>

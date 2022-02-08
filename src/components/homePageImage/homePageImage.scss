@@ -1,0 +1,141 @@
+svg {
+  width: 100%;
+  #eyes {
+    animation: blink 7s step-end infinite both;
+    transform-origin: center;
+  }
+  #left-hand {
+    animation: lefthandwrite 1s ease-in-out infinite alternate;
+    transform-origin: top;
+  }
+  #right-hand {
+    animation: righthandwrite 1s ease-in-out infinite alternate;
+    transform-origin: top;
+  }
+  #flower {
+    animation: moveUp ease-in-out 1.7s infinite alternate;
+    transform-origin: bottom;
+  }
+  #laptop {
+    animation: moveUp ease-in-out 1s infinite alternate;
+    transform-origin: bottom;
+  }
+
+  #weird-hello3 {
+    animation: scaleWords 4s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+  #weird-hello2 {
+    animation: scaleWords 4s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+  #weird-hello {
+    animation: scaleWords 4s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+  #arabic-hello {
+    animation: moveWord 2s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+  #hello {
+    animation: moveWord 1.5s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+
+  #hola {
+    animation: scaleWords 3s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+
+  #ciao {
+    animation: showHide 3s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+  #halo {
+    animation: showHide 2.6s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+  #salve {
+    animation: moveWord 2.3s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+  #salut {
+    animation: scaleWords 1.8s ease infinite alternate;
+    transform-origin: bottom;
+  }
+  #hej {
+    animation: scaleWords 2.7s ease infinite alternate;
+    transform-origin: top;
+  }
+}
+
+@keyframes blink {
+  from,
+  to,
+  10%,
+  25%,
+  80% {
+    transform: scaleY(1);
+  }
+  8%,
+  23%,
+  78% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes lefthandwrite {
+  0% {
+    transform: rotate(0.7deg);
+  }
+  100% {
+    transform: rotate(-0.1deg);
+  }
+}
+
+@keyframes righthandwrite {
+  0% {
+    transform: translateY(1px);
+  }
+  100% {
+    transform: translateY(-1px);
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  100% {
+    transform: translateY(-2px) translateX(2.2px);
+  }
+}
+@keyframes scaleWords {
+  0% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+@keyframes moveWord {
+  0% {
+    transform: scale(1.05) translateX(1px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateX(-4px);
+    opacity: 0;
+  }
+}
+
+@keyframes showHide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

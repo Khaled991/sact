@@ -1,6 +1,6 @@
 import { t } from 'i18next';
 import { ReactElement } from 'react';
-import Logo from '../../assets/img/logo.png';
+import Logo from '../../assets/img/logo.webp';
 import BlogCard from '../../layout/blogCard/blogCard';
 import './blog.scss';
 import { blogData, facebookUrl } from './blog.data';

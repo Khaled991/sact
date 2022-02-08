@@ -3,7 +3,7 @@ import './invoiceLayout.scss';
 import Typography, {
   TypographyType,
 } from '../../components/typography/typography';
-import Logo from '../../assets/img/logo.png';
+import Logo from '../../assets/img/logo.webp';
 import CustomButton, { ButtonType } from '../../components/Button/button';
 import { t } from 'i18next';
 import axios from 'axios';

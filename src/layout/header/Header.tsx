@@ -1,9 +1,9 @@
 import { ReactElement, useState, useEffect } from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import Logo from '../../assets/img/logo.png';
+import Logo from '../../assets/img/logo.webp';
 import Banner from '../../components/banner/banner';
 import { t } from 'i18next';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { ReactComponent as DownArrow } from '../../assets/icon/down-arrow.svg';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
@@ -46,7 +46,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
       >
         <Container>
           <Navbar.Brand href="#home">
-            <Link to="/">
+            <NavLink to="/">
               <motion.img
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
@@ -55,7 +55,7 @@ const Header = ({ changeLanguage }: IHeaderProps): ReactElement => {
                 alt="Logo"
                 className="logo"
               />
-            </Link>
+            </NavLink>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
